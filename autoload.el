@@ -1,0 +1,5 @@
+(load "~/emacs-config/mirrors.el")
+(load "~/emacs-config/custom-options.el")
+(load "~/emacs-config/minor-modes.el")
+(load "~/emacs-config/languages/c.el")
+(load "~/emacs-config/languages/common-lisp.el")
