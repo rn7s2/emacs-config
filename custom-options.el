@@ -13,8 +13,8 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
-;; 100列提示
-(setq-default fill-column 100)
+;; 80列提示
+(setq-default fill-column 80)
 (global-display-fill-column-indicator-mode)
 
 ;; 使用空格代替制表符
