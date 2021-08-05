@@ -9,7 +9,7 @@
  '(custom-enabled-themes '(misterioso))
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(slime geiser-mit company-web company))
+ '(package-selected-packages '(slime geiser company-web company))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
