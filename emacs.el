@@ -1,4 +1,10 @@
-;; 个性化设置
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Courier Prime" :foundry "QUQA" :slant normal :weight normal :height 141 :width normal)))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -9,20 +15,9 @@
  '(custom-enabled-themes '(misterioso))
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(slime geiser company-web company))
+ '(package-selected-packages '(company company-dcd d-mode geiser-racket))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
-;; 80列提示
-(setq-default fill-column 80)
-(global-display-fill-column-indicator-mode)
+(load "~/emacs-config/autoloads.el")
 
-;; 使用空格代替制表符
-(setq default-tab-width 4)
-(setq-default indent-tabs-mode nil)
-
-;; 启动时全屏
-(add-hook 'window-setup-hook #'toggle-frame-maximized)
-
-;; 备份文件统一放置并隐藏(*nix)
-(setq backup-directory-alist (quote (("." . "~/.emacs_backups"))))

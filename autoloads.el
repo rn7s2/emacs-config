@@ -1,5 +1,2 @@
-(load "~/emacs-config/mirrors.el")
-(load "~/emacs-config/custom-options.el")
-(load "~/emacs-config/modes.el")
-(load "~/emacs-config/languages/c.el")
-(load "~/emacs-config/languages/common-lisp.el")
+(load "~/emacs-config/mirror.el")
+(load "~/emacs-config/custom.el")
