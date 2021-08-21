@@ -14,7 +14,8 @@
  '(custom-enabled-themes '(misterioso))
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(company company-dcd d-mode slime markdown-mode))
+ '(package-selected-packages
+   '(geiser-mit company company-dcd d-mode slime markdown-mode))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
