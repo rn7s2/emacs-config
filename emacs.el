@@ -17,7 +17,7 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(geiser-mit company company-dcd d-mode slime markdown-mode))
+   '(company company-dcd d-mode slime markdown-mode))
  '(show-paren-mode t))
 
 (load "~/emacs-config/autoloads.el")
