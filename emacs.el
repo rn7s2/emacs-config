@@ -12,11 +12,12 @@
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes '(misterioso))
+ '(display-battery-mode t)
+ '(display-time-mode t)
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
    '(geiser-mit company company-dcd d-mode slime markdown-mode))
- '(show-paren-mode t)
- '(tool-bar-mode nil))
+ '(show-paren-mode t))
 
 (load "~/emacs-config/autoloads.el")
