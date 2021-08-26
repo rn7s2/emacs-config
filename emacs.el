@@ -16,6 +16,7 @@
  '(custom-enabled-themes '(adwaita))
  '(display-battery-mode t)
  '(display-time-mode t)
+; '(display-time-24hr-format t)
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages '(company company-dcd d-mode slime markdown-mode))
