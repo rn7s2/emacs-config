@@ -6,6 +6,8 @@
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+(global-set-key (kbd "C-<f5>") 'quickrun-shell)
+
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 (setq-default fill-column 80)
