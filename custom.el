@@ -17,3 +17,6 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'd-mode-hook 'company-dcd-mode)
 (setq company-clang-arguments '())
+
+(add-to-list 'exec-path "/usr/bin")
+(add-to-list 'exec-path "/usr/local/bin")
