@@ -18,7 +18,6 @@
 (add-hook 'd-mode-hook 'company-dcd-mode)
 (setq company-clang-arguments '())
 
-(add-to-list 'exec-path "/usr/bin")
-(add-to-list 'exec-path "/usr/local/bin")
-
 (setq initial-scratch-message (insert-file-contents "~/note.txt"))
+
+(cnfonts-enable)
