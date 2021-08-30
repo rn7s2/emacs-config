@@ -20,7 +20,7 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(cnfonts quickrun company company-dcd d-mode slime markdown-mode))
+   '(cnfonts quickrun company company-dcd d-mode markdown-mode geiser-racket))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
