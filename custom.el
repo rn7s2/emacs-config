@@ -19,5 +19,3 @@
 (setq company-clang-arguments '())
 
 (setq initial-scratch-message (insert-file-contents "~/note.txt"))
-
-(cnfonts-enable)
