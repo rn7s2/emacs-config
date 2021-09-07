@@ -3,7 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier Prime" :foundry "QUQA" :slant normal :weight normal :height 151 :width normal)))))
+ '(default ((t (:family "Liberation Mono" :foundry "1ASC" :slant normal :weight normal :height 139 :width normal)))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,7 +20,7 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(quickrun company company-dcd d-mode markdown-mode geiser-mit slime))
+   '(company-c-headers quickrun company company-dcd d-mode markdown-mode geiser-mit slime))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
