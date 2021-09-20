@@ -1,6 +1,6 @@
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
-(setq initial-scratch-message (insert-file-contents "~/note.txt"))
+(setq initial-scratch-message (insert-file-contents "~/emacs-config/note.txt"))
 
 (setq c-basic-offset 4)
 (setq default-tab-width 4)
