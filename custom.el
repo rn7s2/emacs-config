@@ -8,26 +8,24 @@
 (setq-default indent-tabs-mode nil)
 
 (add-hook 'prog-mode-hook 'hs-minor-mode)
+(add-hook 'prog-mode-hook (lambda () (local-set-key (kbd "<C-f5>") 'quickrun-shell)))
 
 (setq-default fill-column 80)
 (global-display-fill-column-indicator-mode)
 
 (setq inferior-lisp-program "sbcl")
 
-(add-hook 'd-mode-hook 'company-dcd-mode)
-
-(global-set-key (kbd "C-<f5>") 'quickrun-shell)
-
 (require 'company)
 (require 'company-c-headers)
 (setq company-clang-arguments '())
 (setq company-c-headers-path-system
       (append company-c-headers-path-system
-              '("/usr/lib/gcc/x86_64-pc-linux-gnu/10.3.0/include/g++-v10"
-                "/usr/lib/gcc/x86_64-pc-linux-gnu/10.3.0/include/g++-v10/x86_64-pc-linux-gnu"
-                "/usr/lib/gcc/x86_64-pc-linux-gnu/10.3.0/include/g++-v10/backward"
-                "/usr/lib/gcc/x86_64-pc-linux-gnu/10.3.0/include"
-                "/usr/lib/gcc/x86_64-pc-linux-gnu/10.3.0/include-fixed")))
+              '("/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"
+                "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"
+                "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"
+                "/usr/lib/gcc/x86_64-redhat-linux/11/include"
+                "/usr/local/include"
+                "/usr/include")))
 (add-to-list 'company-backends 'company-c-headers)
 
 (global-set-key (kbd "M-/") 'company-complete)
