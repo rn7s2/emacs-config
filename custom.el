@@ -8,7 +8,7 @@
 (setq-default indent-tabs-mode nil)
 
 (add-hook 'prog-mode-hook 'hs-minor-mode)
-(add-hook 'prog-mode-hook (lambda () (local-set-key (kbd "<C-f5>") 'quickrun-shell)))
+(add-hook 'prog-mode-hook (lambda () (local-set-key (kbd "<f5>") 'quickrun-shell)))
 
 (setq-default fill-column 80)
 (global-display-fill-column-indicator-mode)
@@ -20,10 +20,7 @@
 (setq company-clang-arguments '())
 (setq company-c-headers-path-system
       (append company-c-headers-path-system
-              '("/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"
-                "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"
-                "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"
-                "/usr/lib/gcc/x86_64-redhat-linux/11/include"
+              '("/usr/lib/clang/11.0.1/include"
                 "/usr/local/include"
                 "/usr/include")))
 (add-to-list 'company-backends 'company-c-headers)
