@@ -5,7 +5,6 @@ Simple emacs config.
 ## Supported:
 - C/C++
 - Common Lisp
-- MIT-Scheme
 - Markdown
 
 ## Usage:
