@@ -21,7 +21,7 @@
  '(display-time-mode t)
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(markdown-mode quickrun slime))
+ '(package-selected-packages '(rust-mode markdown-mode quickrun slime))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
