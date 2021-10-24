@@ -10,3 +10,4 @@
 (setq-default indent-tabs-mode nil)
 (add-hook 'prog-mode-hook (lambda () (local-set-key (kbd "<f5>") 'quickrun-shell)))
 (setq inferior-lisp-program "sbcl")
+(setq rust-format-on-save t)
