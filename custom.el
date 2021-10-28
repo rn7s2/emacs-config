@@ -11,3 +11,5 @@
 (add-hook 'prog-mode-hook (lambda () (local-set-key (kbd "<f5>") 'quickrun-shell)))
 (setq inferior-lisp-program "sbcl")
 (setq rust-format-on-save t)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'after-init-hook 'global-company-mode)

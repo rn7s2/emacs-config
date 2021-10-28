@@ -1,6 +1,7 @@
 ;; This is the note buffer.
 
 ;; TODO list:
+;  0. Practice Advanced Mathematics. *IMPORTANT!!!
 ;  1. Practice Linear Algebra.
 ;  2. Learn Rust.
 ;  3. Prepare for CET-4.
