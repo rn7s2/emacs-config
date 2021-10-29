@@ -4,7 +4,9 @@ Simple emacs config.
 
 ## Supported:
 - C/C++
-- Common Lisp
+- Rust
+- Scheme (MIT Scheme)
+- Common Lisp (SBCL)
 - Markdown
 
 ## Usage:
