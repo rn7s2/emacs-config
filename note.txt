@@ -1,12 +1,12 @@
-;;  (running)  CM    -- Concrete Mathematics
-;;  (delayed)  LADR  -- Linear Algebra Done Right
-;;  (paused)   CSAPP -- Computer Systems A Programmer's Perspective
+;;   (running) CM    -- Concrete Mathematics
+;;   (delayed) LADR  -- Linear Algebra Done Right
+;;    (paused) CSAPP -- Computer Systems A Programmer's Perspective
 ;;  (canceled) EC    -- Effective C++
-;;  (delayed)  TASS  -- The Annotated STL Source
-;;  (paused)   HPLSP -- High Performance Linux Server Programming
-;;  (delayed)  MLSPM -- Multithread Linux Server Programming using Muduo
-;;  (running)  SICP  -- Structure and Interpretation of Computer Programs
-;;  (running)  TTR   -- The Tao of Rust & Learn Rust
+;;   (delayed) TASS  -- The Annotated STL Source
+;;    (paused) HPLSP -- High Performance Linux Server Programming
+;;   (delayed) MLSPM -- Multithread Linux Server Programming using Muduo
+;;   (running) SICP  -- Structure and Interpretation of Computer Programs
+;;   (running) TTR   -- The Tao of Rust & Learn Rust
 
 ;;  |  Sun|  Mon|  Tue|  Wed|  Thu|  Fri|  Sat|
 ;;  |-----------------------------------------|
