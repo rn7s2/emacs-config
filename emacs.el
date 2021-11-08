@@ -23,7 +23,7 @@
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(adwaita))
+ '(custom-enabled-themes '(wombat))
  '(display-battery-mode t)
  '(display-time-24hr-format t)
  '(display-time-mode t)
