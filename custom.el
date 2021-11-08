@@ -13,3 +13,6 @@
 (setq rust-format-on-save t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'after-init-hook 'global-company-mode)
+(setq lsp-keymap-prefix "s-l")
+(require 'lsp-mode)
+(add-hook 'rust-mode-hook #'lsp)
