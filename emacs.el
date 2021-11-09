@@ -30,7 +30,7 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(flycheck lsp-ui lsp-mode company geiser-racket markdown-mode quickrun rainbow-delimiters rust-mode slime))
+   '(markdown-mode quickrun rainbow-delimiters rust-mode slime))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
  '(tool-bar-mode nil))

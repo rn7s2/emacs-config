@@ -10,7 +10,7 @@
 
 ;;  |  Sun|  Mon|  Tue|  Wed|  Thu|  Fri|  Sat|
 ;;  |-----------------------------------------|
-;;  |   CM|  TTR|     |   CM|   CM|  TTR|   CM|
+;;  |   CM|  TTR|  TTR|   CM|   CM|  TTR|   CM|
 ;;  |  TTR| SICP|     |  TTR|  TTR|     | SICP|
-;;  |   CM|  TTR|     | SICP|     |     |   CM|
-;;  | SICP|   CM|     |     |     |     |  TTR|
+;;  |   CM|   CM|     | SICP|     |     |   CM|
+;;  | SICP|     |     |     |     |     |  TTR|
