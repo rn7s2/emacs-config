@@ -1,6 +1,6 @@
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
 (setq initial-scratch-message (insert-file-contents "~/emacs-config/note.txt"))
-(setq-default fill-column 100)
+(setq-default fill-column 80)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
@@ -12,3 +12,4 @@
 (setq inferior-lisp-program "sbcl")
 (setq rust-format-on-save t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(setq-default line-spacing 0.27)
