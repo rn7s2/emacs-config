@@ -20,5 +20,5 @@
 ; |   13:50|   CSAPP|--------|      AM|        |----    |        |   CSAPP|
 ; |   15:40|      AM|        |    SICP|      LA|        |    RUST|      AM|
 ; |   17:25|    SICP|   CSAPP|      LA|      AM|   CSAPP|   CSAPP|    SICP|
-; |   19:20|      LA|--------|        |--------|        |      AM|      LA|
-; |   21:00|    WORD|    WORD|    WORD|    WORD|    WORD|    WORD|    WORD|
+; |   19:20|      LA|    WORD|        |--------|        |      AM|      LA|
+; |   21:00|    WORD|--------|    WORD|    WORD|    WORD|    WORD|    WORD|
