@@ -1,16 +1,24 @@
-;;   (running) CM    -- Concrete Mathematics
-;;   (delayed) LADR  -- Linear Algebra Done Right
-;;    (paused) CSAPP -- Computer Systems A Programmer's Perspective
-;;  (canceled) EC    -- Effective C++
-;;   (delayed) TASS  -- The Annotated STL Source
-;;    (paused) HPLSP -- High Performance Linux Server Programming
-;;   (delayed) MLSPM -- Multithread Linux Server Programming using Muduo
-;;   (running) SICP  -- Structure and Interpretation of Computer Programs
-;;   (running) TTR   -- The Tao of Rust & Learn Rust
+; (5) CSAPP -- Computer Systems A Programmer's Perspective
+; (5) AM    -- Advanced Mathematics
+; (5) LA    -- Linear Algebra
+; (4) SICP  -- Structure and Interpretation of Computer Programs
+; (2) RUST  -- Learn Rust
+; (7) WORD  -- Recite English words
+; (7) LC    -- Leetcode
+; (0) CM    -- Concrete Mathematics
+; (0) LADR  -- Linear Algebra Done Right
+; (0) EC    -- Effective C++
+; (0) TASS  -- The Annotated STL Source
+; (0) HPLSP -- High Performance Linux Server Programming
+; (0) MLSPM -- Multithread Linux Server Programming using Muduo
 
-;;  |  Sun|  Mon|  Tue|  Wed|  Thu|  Fri|  Sat|
-;;  |-----------------------------------------|
-;;  |   CM|  TTR|  TTR|   CM|   CM|  TTR|   CM|
-;;  |  TTR| SICP|     |  TTR|  TTR|     | SICP|
-;;  |   CM|   CM|     | SICP|     |     |   CM|
-;;  | SICP|     |     |     |     |     |  TTR|
+; |    Time|     Mon|     Tue|     Wed|     Thu|     Fri|     Sat|     Sun|
+; |--------|--------|--------|--------|--------|--------|--------|--------|
+; |    8:00|      LC|------LC|      LC|------LC|      LC|      LC|      LC|
+; |    9:50|--------|--------|--------|--------|--------|      LA|    RUST|
+; |   11:30|        |    ----|----    |----    |--------|    SICP|        |
+; |   13:50|   CSAPP|--------|      AM|        |----    |        |   CSAPP|
+; |   15:40|      AM|        |    SICP|      LA|        |    RUST|      AM|
+; |   17:25|    SICP|   CSAPP|      LA|      AM|   CSAPP|   CSAPP|    SICP|
+; |   19:20|      LA|--------|        |--------|        |      AM|      LA|
+; |   21:00|    WORD|    WORD|    WORD|    WORD|    WORD|    WORD|    WORD|
