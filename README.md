@@ -5,13 +5,13 @@ Simple emacs config.
 ## Supported:
 - C/C++
 - Rust
-- Scheme (MIT Scheme)
-- Common Lisp (SBCL)
+- Scheme (MIT Scheme + Geiser)
+- Common Lisp (SBCL + Slime)
 - Markdown
 
 ## Usage:
 In your shell:  
-- `cd ~`
+- `cd`
 - `git clone https://github.com/rn7s2/emacs-config.git`
 - `ln -s ~/emacs-config/emacs.el ~/.emacs`
 Then open emacs,  
