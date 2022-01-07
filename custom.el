@@ -24,5 +24,5 @@
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (setq rust-format-on-save t)
-(add-hook 'rust-mode-hook #'lsp)
-(add-hook 'rust-mode-hook (lambda () (define-key rust-mode-map (kbd "C-c C-c") 'rust-run)))
+
+(setq-default line-spacing 0.15)
