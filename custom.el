@@ -21,8 +21,12 @@
 (setq c-default-style "bsd")
 
 (setq inferior-lisp-program "sbcl")
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(dolist (hook '(lisp-mode-hook
+                scheme-mode-hook
+                emacs-lisp-mode-hook
+                lisp-interaction-mode-hook))
+  (add-hook hook 'rainbow-delimiters-mode))
 
 (setq rust-format-on-save t)
 
-(setq-default line-spacing 0.15)
+(cnfonts-mode 1)
