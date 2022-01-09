@@ -1,4 +1,5 @@
-(exec-path-from-shell-initialize)
+(if (not (string-equal system-type "windows-nt"))
+    (exec-path-from-shell-initialize))
 
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
 
