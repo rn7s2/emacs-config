@@ -1,24 +1,17 @@
-; (5) CSAPP -- Computer Systems A Programmer's Perspective
-; (5) AM    -- Advanced Mathematics
-; (5) LA    -- Linear Algebra
-; (4) SICP  -- Structure and Interpretation of Computer Programs
-; (2) RUST  -- Learn Rust
-; (7) WORD  -- Recite English words
-; (7) LC    -- Leetcode
-; (0) CM    -- Concrete Mathematics
-; (0) LADR  -- Linear Algebra Done Right
-; (0) EC    -- Effective C++
-; (0) TASS  -- The Annotated STL Source
-; (0) HPLSP -- High Performance Linux Server Programming
-; (0) MLSPM -- Multithread Linux Server Programming using Muduo
+; (12)  WORK -- Yoledge
+;  (6)  RUST -- Learn Rust
+;  (6)  AM   -- Advanced Mathematics
+;  (6)  XV6  -- MIT 6.828 Operating System Engineering
+;  (6)  SICP -- Structure and Interpretation of Computer Programs
+;
+; ------------------------------------------------
+;   SUN |  MON |  TUE |  WED |  THU |  FRI |  SAT 
+; ------------------------------------------------
+;  RUST |   AM |  XV6 | SICP | RUST | SICP |      
+;  RUST |   AM |  XV6 | SICP | RUST | SICP |      
+;    AM |  XV6 | SICP | RUST |   AM |  XV6 |      
+;    AM |  XV6 | SICP | RUST |   AM |  XV6 |      
+;  WORK | WORK | WORK | WORK | WORK | WORK |      
+;  WORK | WORK | WORK | WORK | WORK | WORK |      
+; ------------------------------------------------
 
-; |    Time|     Mon|     Tue|     Wed|     Thu|     Fri|     Sat|     Sun|
-; |--------|--------|--------|--------|--------|--------|--------|--------|
-; |    8:00|      LC|------LC|      LC|------LC|      LC|      LC|      LC|
-; |    9:50|--------|--------|--------|--------|--------|      LA|    RUST|
-; |   11:30|        |    ----|----    |----    |--------|    SICP|        |
-; |   13:50|   CSAPP|--------|      AM|        |----    |        |   CSAPP|
-; |   15:40|      AM|        |    SICP|      LA|        |    RUST|      AM|
-; |   17:25|    SICP|   CSAPP|      LA|      AM|   CSAPP|   CSAPP|    SICP|
-; |   19:20|      LA|    WORD|        |--------|        |      AM|      LA|
-; |   21:00|    WORD|--------|    WORD|    WORD|    WORD|    WORD|    WORD|
