@@ -1,17 +1,6 @@
-; (12)  WORK -- Yoledge
-;  (6)  RUST -- Learn Rust
-;  (6)  UP   -- University Physics
-;  (6)  XV6  -- MIT 6.828 Operating System Engineering
-;  (6)  SICP -- Structure and Interpretation of Computer Programs
-;
-; ------------------------------------------------
-;   SUN |  MON |  TUE |  WED |  THU |  FRI |  SAT 
-; ------------------------------------------------
-;  RUST |   UP |  XV6 | SICP | RUST | SICP |      
-;  RUST |   UP |  XV6 | SICP | RUST | SICP |      
-;    UP |  XV6 | SICP | RUST |   UP |  XV6 |      
-;    UP |  XV6 | SICP | RUST |   UP |  XV6 |      
-;  WORK | WORK | WORK | WORK | WORK | WORK |      
-;  WORK | WORK | WORK | WORK | WORK | WORK |      
-; ------------------------------------------------
-
+;    UP -- University Physics
+;   XV6 -- MIT 6.828 Operating System Engineering
+;  SICP -- Structure and Interpretation of Computer Programs
+;  WORK -- Yoledge
+;  RUST -- Learn Rust
+; CSAPP -- Computer Systems A Programmer's Perspective
