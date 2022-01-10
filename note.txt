@@ -1,16 +1,16 @@
 ; (12)  WORK -- Yoledge
 ;  (6)  RUST -- Learn Rust
-;  (6)  AM   -- Advanced Mathematics
+;  (6)  UP   -- University Physics
 ;  (6)  XV6  -- MIT 6.828 Operating System Engineering
 ;  (6)  SICP -- Structure and Interpretation of Computer Programs
 ;
 ; ------------------------------------------------
 ;   SUN |  MON |  TUE |  WED |  THU |  FRI |  SAT 
 ; ------------------------------------------------
-;  RUST |   AM |  XV6 | SICP | RUST | SICP |      
-;  RUST |   AM |  XV6 | SICP | RUST | SICP |      
-;    AM |  XV6 | SICP | RUST |   AM |  XV6 |      
-;    AM |  XV6 | SICP | RUST |   AM |  XV6 |      
+;  RUST |   UP |  XV6 | SICP | RUST | SICP |      
+;  RUST |   UP |  XV6 | SICP | RUST | SICP |      
+;    UP |  XV6 | SICP | RUST |   UP |  XV6 |      
+;    UP |  XV6 | SICP | RUST |   UP |  XV6 |      
 ;  WORK | WORK | WORK | WORK | WORK | WORK |      
 ;  WORK | WORK | WORK | WORK | WORK | WORK |      
 ; ------------------------------------------------
