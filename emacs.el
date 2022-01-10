@@ -30,6 +30,7 @@
  '(display-time-mode t)
  '(fill-column 80)
  '(global-display-line-numbers-mode t)
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
    '(yaml-mode dart-mode cnfonts company exec-path-from-shell geiser-mit markdown-mode quickrun rainbow-delimiters rust-mode slime))

@@ -14,7 +14,7 @@
 (setq rust-format-on-save t)
 
 ;; Misc
-(setq-default indent-tabs-mode nil)
+(setq-default c-basic-offset 4)
 (global-company-mode)
 (global-display-fill-column-indicator-mode)
 (add-hook 'prog-mode-hook 'hs-minor-mode)
