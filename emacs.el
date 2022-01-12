@@ -20,7 +20,7 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
- '(backup-directory-alist '(("." . "~/.emacs_backups")))
+ '(backup-directory-alist '(("." . "~/.emacs-backups")))
  '(c-default-style '((java-mode . "java") (awk-mode . "awk") (other . "k&r")))
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
@@ -33,9 +33,9 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(yaml-mode dart-mode cnfonts company exec-path-from-shell geiser-mit markdown-mode quickrun rainbow-delimiters rust-mode slime))
+   '(cnfonts exec-path-from-shell markdown-mode quickrun rainbow-delimiters rust-mode slime yaml-mode))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 
-(load "~/emacs-config/autoloads.el")
+(load "~/.emacs-config/autoloads.el")

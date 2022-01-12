@@ -1,2 +1,2 @@
-(load "~/emacs-config/mirror.el")
-(load "~/emacs-config/custom.el")
+(load "~/.emacs-config/mirror.el")
+(load "~/.emacs-config/custom.el")
