@@ -33,9 +33,11 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(cnfonts exec-path-from-shell markdown-mode quickrun rainbow-delimiters rust-mode slime yaml-mode))
+   '(company cnfonts exec-path-from-shell markdown-mode quickrun rainbow-delimiters rust-mode slime slime-company yaml-mode))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
+ '(slime-company-after-completion 'slime-company-just-one-space)
+ '(slime-company-completion 'simple)
  '(tool-bar-mode nil))
 
 (load "~/.emacs-config/autoloads.el")
