@@ -22,6 +22,9 @@
 ;; C/C++
 (add-hook-function-to-mode-hooks '(c-mode-hook
                                    c++-mode-hook)
+                                 'astyle-on-save-mode)
+(add-hook-function-to-mode-hooks '(c-mode-hook
+                                   c++-mode-hook)
                                  (lambda ()
 			           (c-set-style "k&r")
 			           (setq c-basic-offset 4)))

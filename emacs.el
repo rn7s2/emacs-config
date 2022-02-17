@@ -34,7 +34,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(company cnfonts exec-path-from-shell eglot geiser-racket markdown-mode quickrun rainbow-delimiters rust-mode slime slime-company yaml-mode))
+   '(astyle company cnfonts exec-path-from-shell eglot geiser-racket markdown-mode quickrun rainbow-delimiters rust-mode slime slime-company yaml-mode))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
  '(slime-company-after-completion 'slime-company-just-one-space)
