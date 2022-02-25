@@ -6,11 +6,8 @@
   (dolist (hook-function hook-functions)
     (add-hook mode-hook hook-function)))
 
-;; PATH
-(if (not (string-equal system-type "windows-nt"))
-    (exec-path-from-shell-initialize))
-
 ;; Misc
+(setf cnfonts-personal-fontnames '(("Cascadia Code" "Cascadia Mono")))
 (cnfonts-mode 1)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
@@ -30,8 +27,6 @@
 			           (setq c-basic-offset 4)))
 
 ;; Lisp
-(setq inferior-lisp-program "sbcl")
-(slime-setup '(slime-fancy slime-company))
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook

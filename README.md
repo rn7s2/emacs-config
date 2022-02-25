@@ -6,8 +6,6 @@ Simple emacs config.
 - C/C++
 - Rust
 - Scheme
-- Common Lisp
-- Markdown
 
 ## Usage:
 In your shell:
