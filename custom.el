@@ -11,15 +11,18 @@
 (cnfonts-mode 1)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
+(powerline-default-theme)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
+(add-hook-functions-to-mode-hook 'prog-mode-hook
+                                 (list 'hs-minor-mode
+                                       (lambda ()
+                                         (local-set-key (kbd "<f5>")
+                                                        'quickrun-shell))))
 (setq initial-scratch-message (insert-file-contents "~/.emacs-config/note.txt"))
 
 ;; C/C++
-(add-hook-function-to-mode-hooks '(c-mode-hook
-                                   c++-mode-hook)
-                                 'astyle-on-save-mode)
 (add-hook-function-to-mode-hooks '(c-mode-hook
                                    c++-mode-hook)
                                  (lambda ()
@@ -32,14 +35,9 @@
                                    emacs-lisp-mode-hook
                                    lisp-interaction-mode-hook)
                                  'rainbow-delimiters-mode)
+(add-hook-function-to-mode-hooks '(emacs-lisp-mode-hook
+                                   lisp-interaction-mode-hook)
+                                 'company-mode)
 
 ;; Rust
 (setq rust-format-on-save t)
-
-;; Quickrun
-(add-hook-functions-to-mode-hook 'prog-mode-hook
-                                 (list 'company-mode
-                                       'hs-minor-mode
-                                       (lambda ()
-                                         (local-set-key (kbd "<f5>")
-                                                        'quickrun-shell))))

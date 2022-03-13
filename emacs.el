@@ -33,7 +33,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(astyle company cnfonts geiser-guile quickrun rainbow-delimiters))
+   '(company powerline cnfonts quickrun rainbow-delimiters rust-mode))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
