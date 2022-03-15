@@ -7,11 +7,8 @@
     (add-hook mode-hook hook-function)))
 
 ;; Misc
-(setf cnfonts-personal-fontnames '(("Cascadia Code" "Cascadia Mono")))
-(cnfonts-mode 1)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
-(powerline-default-theme)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
