@@ -13,18 +13,10 @@
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
 (add-hook-functions-to-mode-hook 'prog-mode-hook
-                                 (list 'hs-minor-mode
-                                       (lambda ()
-                                         (local-set-key (kbd "<f5>")
-                                                        'quickrun-shell))))
-(setq initial-scratch-message (insert-file-contents "~/.emacs-config/note.txt"))
+                                 (list 'hs-minor-mode))
 
-;; C/C++
-(add-hook-function-to-mode-hooks '(c-mode-hook
-                                   c++-mode-hook)
-                                 (lambda ()
-			           (c-set-style "k&r")
-			           (setq c-basic-offset 4)))
+(setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight")))
+(cnfonts-enable)
 
 ;; Lisp
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
@@ -35,6 +27,4 @@
 (add-hook-function-to-mode-hooks '(emacs-lisp-mode-hook
                                    lisp-interaction-mode-hook)
                                  'company-mode)
-
-;; Rust
-(setq rust-format-on-save t)
+(setq inferior-lisp-program "sbcl")

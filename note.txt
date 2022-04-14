@@ -1,4 +1,0 @@
-;   XV6 -- MIT 6.828 Operating System Engineering
-;  SICP -- Structure and Interpretation of Computer Programs
-;  RUST -- Learn Rust
-; CSAPP -- Computer Systems A Programmer's Perspective

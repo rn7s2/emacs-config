@@ -3,9 +3,7 @@
 Simple emacs config.
 
 ## Supported:
-- C/C++
-- Rust
-- Scheme
+- Common Lisp
 
 ## Usage:
 In your shell:
