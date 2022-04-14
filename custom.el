@@ -14,7 +14,7 @@
                                    delete-trailing-whitespace))
 (add-hook-functions-to-mode-hook 'prog-mode-hook
                                  (list 'hs-minor-mode))
-
+(global-company-mode)
 (setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight")))
 (cnfonts-enable)
 
@@ -24,7 +24,4 @@
                                    emacs-lisp-mode-hook
                                    lisp-interaction-mode-hook)
                                  'rainbow-delimiters-mode)
-(add-hook-function-to-mode-hooks '(emacs-lisp-mode-hook
-                                   lisp-interaction-mode-hook)
-                                 'company-mode)
 (setq inferior-lisp-program "sbcl")
