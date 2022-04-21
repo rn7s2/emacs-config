@@ -25,3 +25,4 @@
                                    lisp-interaction-mode-hook)
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "sbcl")
+(slime-setup '(slime-fancy slime-company))

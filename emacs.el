@@ -31,9 +31,10 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(cnfonts company rainbow-delimiters slime))
+ '(package-selected-packages '(slime-company cnfonts company rainbow-delimiters slime))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
+ '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
 
 (load "~/.emacs-config/autoloads.el")
