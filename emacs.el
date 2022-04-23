@@ -3,6 +3,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Liberation Mono" :foundry "1ASC" :slant normal :weight normal :height 139 :width normal))))
+ '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "#ff0000"))))
@@ -21,6 +23,8 @@
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
  '(backup-directory-alist '(("." . "~/.emacs-backups")))
+ '(clang-format-fallback-style "llvm")
+ '(clang-format-style "file")
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes '(wombat))
@@ -31,7 +35,8 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(slime-company cnfonts company rainbow-delimiters slime))
+ '(package-selected-packages
+   '(markdown-mode dot-mode clang-format slime-company company rainbow-delimiters slime))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
  '(slime-company-completion 'fuzzy)

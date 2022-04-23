@@ -7,16 +7,25 @@
     (add-hook mode-hook hook-function)))
 
 ;; Misc
+(global-company-mode)
 (global-display-fill-column-indicator-mode)
+(setq-default line-spacing 0.2)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
 (add-hook-functions-to-mode-hook 'prog-mode-hook
-                                 (list 'hs-minor-mode))
-(global-company-mode)
-(setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight")))
-(cnfonts-enable)
+                                 (list 'hl-line-mode
+                                       'hs-minor-mode))
+
+;; C/C++
+(setq c-basic-offset 4)
+(add-hook-function-to-mode-hooks '(c-mode-hook
+                                   c++-mode-hook)
+                                 (lambda () (add-hook 'before-save-hook
+                                                      'clang-format-buffer
+                                                      nil
+                                                      'local-hook)))
 
 ;; Lisp
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
