@@ -33,10 +33,12 @@
  '(display-time-mode t)
  '(fill-column 100)
  '(global-display-line-numbers-mode t)
+ '(graphviz-dot-auto-preview-on-save t)
+ '(graphviz-dot-indent-width 4)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(markdown-mode dot-mode clang-format slime-company company rainbow-delimiters slime))
+   '(graphviz-dot-mode markdown-mode clang-format slime-company company rainbow-delimiters slime))
  '(rainbow-delimiters-max-face-count 6)
  '(show-paren-mode t)
  '(slime-company-completion 'fuzzy)
