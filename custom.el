@@ -9,7 +9,8 @@
 ;; Misc
 (global-company-mode)
 (global-display-fill-column-indicator-mode)
-(setq-default line-spacing 0.2)
+(if (not (string-equal system-type "windows-nt"))
+    (setq-default line-spacing 0.2))
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
