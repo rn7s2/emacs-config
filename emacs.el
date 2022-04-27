@@ -3,7 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 130 :width normal))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -40,7 +39,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(clang-format company geiser-racket graphviz-dot-mode markdown-mode slime slime-company rainbow-delimiters))
+   '(clang-format cnfonts company geiser-racket graphviz-dot-mode markdown-mode slime slime-company rainbow-delimiters))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))

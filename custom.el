@@ -18,6 +18,8 @@
 (add-hook-functions-to-mode-hook 'prog-mode-hook
                                  (list 'hl-line-mode
                                        'hs-minor-mode))
+(setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight")))
+(cnfonts-mode 1)
 
 ;; C/C++
 (setq c-basic-offset 4)
