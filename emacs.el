@@ -4,8 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:underline t))))
- '(rainbow-delimiters-base-face ((t (:inherit nil))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
+ '(rainbow-delimiters-base-face ((t (:inherit nil))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "#ff0000"))))
  '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "#ff8800"))))
  '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "#888800"))))
@@ -36,17 +36,8 @@
  '(graphviz-dot-indent-width 4)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(clang-format
-                               cnfonts
-                               company
-                               csharp-mode
-                               fsharp-mode
-                               geiser-racket
-                               graphviz-dot-mode
-                               markdown-mode
-                               slime
-                               slime-company
-                               rainbow-delimiters))
+ '(package-selected-packages
+   '(clang-format cnfonts company csharp-mode fsharp-mode geiser-racket graphviz-dot-mode markdown-mode markdown-preview-mode slime slime-company rainbow-delimiters))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))

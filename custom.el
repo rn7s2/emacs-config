@@ -38,3 +38,8 @@
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company))
+
+;; Markdown
+(require 'markdown-preview-mode)
+(add-to-list 'markdown-preview-javascript
+             "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML")
