@@ -1,4 +1,5 @@
-;; Helper functions
+;; -*- lexical-binding: t; -*-
+;; Helper functions  
 (defun add-hook-function-to-mode-hooks (mode-hooks hook-function)
   (dolist (mode-hook mode-hooks)
     (add-hook mode-hook hook-function)))
@@ -23,12 +24,6 @@
 
 ;; C/C++
 (setq c-basic-offset 4)
-(add-hook-function-to-mode-hooks '(c-mode-hook
-                                   c++-mode-hook)
-                                 (lambda () (add-hook 'before-save-hook
-                                                      'clang-format-buffer
-                                                      nil
-                                                      'local-hook)))
 
 ;; Lisp
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
@@ -38,8 +33,3 @@
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company))
-
-;; Markdown
-(require 'markdown-preview-mode)
-(add-to-list 'markdown-preview-javascript
-             "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML")

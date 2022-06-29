@@ -5,8 +5,7 @@ Simple emacs config.
 ## Supported
 - C/C++
 - Common Lisp
-- DOT Language
-- Markdown
+- Racket
 
 ## Usage
 ### *nix
@@ -23,6 +22,7 @@ Then open emacs,
 - `M-x package-install-selected`
 
 ### Windows
-`.emacs` should be in `C:\Users\<YOUR USER NAME>\AppData\Roaming\`
+`.emacs` should be in `C:\Users\<YOUR USER NAME>\AppData\Roaming\`  
+You can still create a symbollink to emacs.el.
 
 All done. Don't forget to restart emacs.
