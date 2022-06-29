@@ -5,8 +5,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:underline t))))
- '(rainbow-delimiters-base-face ((t (:inherit nil))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
+ '(rainbow-delimiters-base-face ((t (:inherit nil))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "#ff0000"))))
  '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "#ff8800"))))
  '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "#888800"))))
@@ -30,6 +30,7 @@
  '(display-time-24hr-format t)
  '(display-time-mode t)
  '(fill-column 100)
+ '(geiser-racket-init-file "~/.emacs-config/sicp.rkt")
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)

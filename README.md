@@ -4,6 +4,7 @@ Simple emacs config.
 
 ## Supported
 - C/C++
+- R5RS
 - Common Lisp
 - Racket
 
