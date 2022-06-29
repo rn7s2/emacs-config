@@ -30,7 +30,6 @@
  '(display-time-24hr-format t)
  '(display-time-mode t)
  '(fill-column 100)
- '(geiser-racket-init-file "~/.emacs-config/sicp.rkt")
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
