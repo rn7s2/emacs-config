@@ -34,7 +34,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(cnfonts company geiser-chez slime slime-company rainbow-delimiters))
+   '(tuareg cnfonts company geiser-chez slime slime-company rainbow-delimiters))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))

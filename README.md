@@ -4,8 +4,9 @@ Simple emacs config.
 
 ## Supported
 - C/C++
+- Scheme
 - Common Lisp
-- Racket
+- OCaml
 
 ## Usage
 ### *nix
