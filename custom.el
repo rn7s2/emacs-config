@@ -12,8 +12,8 @@
 (global-display-fill-column-indicator-mode)
 (if (string-equal system-type "windows-nt")
     (progn (setq cnfonts-personal-fontnames '(("Courier Prime")))
-           (cnfonts-mode 1)))
-(setq-default line-spacing 0.2)
+           (cnfonts-mode 1))
+  (setq-default line-spacing 0.2))
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
