@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t; -*-
-;; Helper functions  
+;; Helper functions
 (defun add-hook-function-to-mode-hooks (mode-hooks hook-function)
   (dolist (mode-hook mode-hooks)
     (add-hook mode-hook hook-function)))
@@ -19,7 +19,7 @@
 (add-hook-functions-to-mode-hook 'prog-mode-hook
                                  (list 'hl-line-mode
                                        'hs-minor-mode))
-(setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight")))
+(setq cnfonts-personal-fontnames '(("Courier Prime")))
 (cnfonts-mode 1)
 
 ;; C/C++
