@@ -10,8 +10,10 @@
 ;; Misc
 (global-company-mode)
 (global-display-fill-column-indicator-mode)
-(if (not (string-equal system-type "windows-nt"))
-    (setq-default line-spacing 0.2))
+(if (string-equal system-type "windows-nt")
+    (progn (setq cnfonts-personal-fontnames '(("Courier Prime")))
+           (cnfonts-mode 1)))
+(setq-default line-spacing 0.2)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
@@ -19,8 +21,6 @@
 (add-hook-functions-to-mode-hook 'prog-mode-hook
                                  (list 'hl-line-mode
                                        'hs-minor-mode))
-(setq cnfonts-personal-fontnames '(("Courier Prime")))
-(cnfonts-mode 1)
 
 ;; C/C++
 (setq c-basic-offset 4)
