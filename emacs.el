@@ -4,6 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :height 143 :width normal))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -23,9 +24,12 @@
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
  '(backup-directory-alist '(("." . "~/.emacs-backups")))
+ '(c-basic-offset 4)
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes '(wombat))
+ '(custom-safe-themes
+   '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default))
  '(display-battery-mode t)
  '(display-time-24hr-format t)
  '(display-time-mode t)
@@ -33,10 +37,10 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(line-spacing 0.2)
  '(package-selected-packages
-   '(tuareg cnfonts company geiser-chez slime slime-company rainbow-delimiters))
+   '(cnfonts company geiser-chez ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
- '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
 
 (load "~/.emacs-config/autoloads.el")

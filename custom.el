@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t; -*-
-;; Helper functions
+;; helper functions
 (defun add-hook-function-to-mode-hooks (mode-hooks hook-function)
   (dolist (mode-hook mode-hooks)
     (add-hook mode-hook hook-function)))
@@ -7,13 +7,12 @@
   (dolist (hook-function hook-functions)
     (add-hook mode-hook hook-function)))
 
-;; Misc
+;; company
 (global-company-mode)
+(add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
+
+;; misc
 (global-display-fill-column-indicator-mode)
-(if (string-equal system-type "windows-nt")
-    (progn (setq cnfonts-personal-fontnames '(("Courier Prime")))
-           (cnfonts-mode 1))
-  (setq-default line-spacing 0.2))
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
@@ -22,14 +21,35 @@
                                  (list 'hl-line-mode
                                        'hs-minor-mode))
 
-;; C/C++
-(setq c-basic-offset 4)
+;; font
+(setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight")))
+(cnfonts-mode 1)
+
+;; powerline
+(setq sml/theme 'powerline)
+(sml/setup)
+
+;; ligature
+(ligature-set-ligatures 't '("www"))
+(ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+(ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                     ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                     "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                     "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                     "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                     "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                     "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                     "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                     ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                     "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                     "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                     "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                     "\\\\" "://"))
+(global-ligature-mode t)
 
 ;; Lisp
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
+                                   lisp-interaction-mode-hook
                                    scheme-mode-hook
-                                   emacs-lisp-mode-hook
-                                   lisp-interaction-mode-hook)
+                                   emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
-(setq inferior-lisp-program "sbcl")
-(slime-setup '(slime-fancy slime-company))
