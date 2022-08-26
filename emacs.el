@@ -39,7 +39,7 @@
  '(inhibit-startup-screen t)
  '(line-spacing 0.2)
  '(package-selected-packages
-   '(cnfonts company geiser-chez ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
+   '(flycheck lsp-ui lsp-mode rust-mode cnfonts company geiser-chez ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 

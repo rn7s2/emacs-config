@@ -3,10 +3,10 @@
 Simple emacs config.
 
 ## Supported
-- C/C++
+- Rust
 - Scheme
-- Common Lisp
-- OCaml
+- C/C++
+- Markdown
 
 ## Usage
 ### *nix

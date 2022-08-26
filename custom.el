@@ -47,9 +47,20 @@
                                      "\\\\" "://"))
 (global-ligature-mode t)
 
-;; Lisp
+;; lisp
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
                                    lisp-interaction-mode-hook
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
+
+;; rust
+(setq rust-format-on-save t)
+(add-hook 'rust-mode-hook (lambda ()
+                            (prettify-symbols-mode)
+                            (define-key rust-mode-map (kbd "C-c C-c r") 'rust-run)
+                            (define-key rust-mode-map (kbd "C-c C-c c") 'rust-compile)))
+(add-hook 'lsp-mode-hook (lambda ()
+                           (setq lsp-rust-server 'rust-analyzer)
+                           (setq lsp-modeline-diagnostics-enable t)
+                           (setq lsp-modeline-diagnostics-scope :workspace)))
