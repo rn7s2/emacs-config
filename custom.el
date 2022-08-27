@@ -22,7 +22,8 @@
                                        'hs-minor-mode))
 
 ;; font
-(setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight")))
+(if (string-equal system-type "windows-nt")
+    (setq cnfonts-personal-fontnames '(("Cascadia Code SemiLight"))))
 (cnfonts-mode 1)
 
 ;; powerline

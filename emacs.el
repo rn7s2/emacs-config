@@ -37,10 +37,10 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(line-spacing 0.2)
  '(package-selected-packages
    '(flycheck lsp-ui lsp-mode rust-mode cnfonts company geiser-chez ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(warning-suppress-log-types '((comp))))
 
 (load "~/.emacs-config/autoloads.el")
