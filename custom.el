@@ -27,7 +27,7 @@
 (cnfonts-mode 1)
 
 ;; powerline
-(setq sml/theme 'powerline)
+(setq sml/theme 'light-powerline)
 (sml/setup)
 
 ;; ligature
@@ -54,6 +54,8 @@
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
+(setq inferior-lisp-program "sbcl")
+(slime-setup '(slime-fancy slime-company))
 
 ;; rust
 (setq rust-format-on-save t)

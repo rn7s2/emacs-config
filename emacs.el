@@ -27,9 +27,9 @@
  '(c-basic-offset 4)
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(wombat))
+ '(custom-enabled-themes '(modus-vivendi))
  '(custom-safe-themes
-   '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default))
+   '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" default))
  '(display-battery-mode t)
  '(display-time-24hr-format t)
  '(display-time-mode t)
@@ -38,9 +38,9 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(flycheck lsp-ui lsp-mode rust-mode cnfonts company geiser-chez ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
+   '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
- '(tool-bar-mode nil)
- '(warning-suppress-log-types '((comp))))
+ '(slime-company-completion 'fuzzy)
+ '(tool-bar-mode nil))
 
 (load "~/.emacs-config/autoloads.el")
