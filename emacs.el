@@ -37,8 +37,11 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(package-selected-packages
-   '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
+ (if (< (string-to-number emacs-version) 28)
+     '(package-selected-packages
+       '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
+   '(package-selected-packages
+     '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme)))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
