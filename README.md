@@ -7,6 +7,7 @@ Simple emacs config.
 - Scheme
 - C/C++
 - Markdown
+- PowerShell
 
 ## Usage
 ### *nix

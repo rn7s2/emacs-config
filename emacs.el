@@ -27,7 +27,9 @@
  '(c-basic-offset 4)
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(modus-vivendi))
+ (if (< (string-to-number emacs-version) 28)
+     '(custom-enabled-themes '(wombat))
+   '(custom-enabled-themes '(modus-vivendi)))
  '(custom-safe-themes
    '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" default))
  '(display-battery-mode t)
@@ -39,9 +41,9 @@
  '(inhibit-startup-screen t)
  (if (< (string-to-number emacs-version) 28)
      '(package-selected-packages
-       '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme))
+       '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme powershell))
    '(package-selected-packages
-     '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme)))
+     '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme powershell)))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
