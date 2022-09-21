@@ -4,7 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :height 160 :width normal))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :extend nil :overline nil :underline nil :slant normal :weight normal :height 200 :width normal :foundry "nil" :family "Inconsolata"))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -40,7 +40,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  (if (< (string-to-number emacs-version) 28)
-     '(package-selected-packages
+ '(package-selected-packages
        '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme powershell))
    '(package-selected-packages
      '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme powershell)))
