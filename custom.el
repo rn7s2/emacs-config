@@ -32,7 +32,8 @@
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
                                    lisp-interaction-mode-hook
                                    scheme-mode-hook
-                                   emacs-lisp-mode-hook)
+                                   emacs-lisp-mode-hook
+                                   racket-mode-hook)
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
