@@ -3,11 +3,10 @@
 Simple emacs config.
 
 ## Supported
-- Rust
-- Scheme
 - C/C++
-- Markdown
-- PowerShell
+- Common Lisp
+- Emacs Lisp
+- Racket
 
 ## Usage
 ### *nix
