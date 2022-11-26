@@ -4,9 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- (if (string-equal system-type "darwin")
-     '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :extend nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "nil" :family "Monaco"))))
-   '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :height 160 :width normal)))))
+ '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :height 160 :width normal))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -29,9 +27,7 @@
  '(c-basic-offset 4)
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- (if (< (string-to-number emacs-version) 28)
-     '(custom-enabled-themes '(wombat))
-   '(custom-enabled-themes '(modus-vivendi)))
+ '(custom-enabled-themes '(wombat))
  '(custom-safe-themes
    '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" default))
  '(display-battery-mode t)
@@ -41,11 +37,8 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- (if (< (string-to-number emacs-version) 28)
-     '(package-selected-packages
-       '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme powershell))
-   '(package-selected-packages
-     '(slime-company slime flycheck lsp-ui lsp-mode rust-mode cnfonts company ligature markdown-mode rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme powershell)))
+ '(package-selected-packages
+   '(cnfonts company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
