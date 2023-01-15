@@ -4,7 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :height 160 :width normal))))
+ `(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :width normal :height ,@(if (eq 'darwin system-type) (list 220) (list 160))))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -38,7 +38,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(cnfonts company geiser-chez racket-mode rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
+   '(cnfonts company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
