@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t; -*-
+
 (defun set-exec-path-from-shell-PATH ()
   "Set up Emacs' `exec-path' and PATH environment variable to match
 that used by the user's shell.
@@ -13,7 +14,8 @@ apps are not started from a shell."
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-(set-exec-path-from-shell-PATH)
+(when (eq 'darwin system-type)
+  (set-exec-path-from-shell-PATH))
 
 ;; helper functions
 (defun add-hook-function-to-mode-hooks (mode-hooks hook-function)
