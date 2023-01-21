@@ -14,6 +14,12 @@ apps are not started from a shell."
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
+(defun set-proxy ()
+  (let ((url "http://127.0.0.1:8889"))
+    (setenv "http_proxy" url)
+    (setenv "https_proxy" url)))
+
+(set-proxy)
 (when (eq 'darwin system-type)
   (set-exec-path-from-shell-PATH))
 

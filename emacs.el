@@ -38,7 +38,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(cnfonts company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
+   '(cider clojure-mode cnfonts company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
