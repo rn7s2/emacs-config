@@ -59,5 +59,5 @@ apps are not started from a shell."
                                    emacs-lisp-mode-hook
                                    racket-mode-hook)
                                  'rainbow-delimiters-mode)
-(setq inferior-lisp-program "sbcl")
+(setq inferior-lisp-program "abcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
