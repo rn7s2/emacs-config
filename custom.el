@@ -9,17 +9,17 @@ apps are not started from a shell."
   (interactive)
   (let ((path-from-shell (replace-regexp-in-string
 			  "[ \t\n]*$" "" (shell-command-to-string
-					  "zsh --login -c 'echo $PATH'"
-					  ))))
+					  "zsh --login -c 'echo $PATH'"))))
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-(defun set-proxy ()
-  (let ((url "http://127.0.0.1:8889"))
-    (setenv "http_proxy" url)
-    (setenv "https_proxy" url)))
+; (defun set-proxy ()
+;   (let ((url "http://127.0.0.1:8889"))
+;     (setenv "http_proxy" url)
+;     (setenv "https_proxy" url)))
 
-(set-proxy)
+; (set-proxy)
+
 (when (eq 'darwin system-type)
   (set-exec-path-from-shell-PATH))
 
@@ -46,6 +46,7 @@ apps are not started from a shell."
                                        'hs-minor-mode))
 
 ;; font
+(setq cnfonts-personal-fontnames '(("IBM Plex Mono")))
 (cnfonts-mode 1)
 
 ;; powerline
@@ -56,8 +57,7 @@ apps are not started from a shell."
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
                                    lisp-interaction-mode-hook
                                    scheme-mode-hook
-                                   emacs-lisp-mode-hook
-                                   racket-mode-hook)
+                                   emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
