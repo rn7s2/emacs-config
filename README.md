@@ -4,7 +4,7 @@ Simple emacs config.
 
 ## Supported
 - C/C++
-- Common Lisp
+- Scheme
 - Emacs Lisp
 
 ## Usage
