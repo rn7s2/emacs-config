@@ -47,6 +47,7 @@ apps are not started from a shell."
 (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
 ;; misc
+(setq-default line-spacing 0.23)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen)

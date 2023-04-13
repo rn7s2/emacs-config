@@ -3,10 +3,11 @@
 Simple emacs config.
 
 ## Supported
-- C/C++
 - Common Lisp
+- C/C++
 - Scheme
 - Emacs Lisp
+- Markdown
 
 ## Usage
 ### *nix
