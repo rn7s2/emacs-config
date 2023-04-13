@@ -42,7 +42,6 @@
    '(cnfonts company dash editorconfig geiser-chez magit rainbow-delimiters s slime slime-company
      smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
- '(slime-company-completion 'fuzzy)
  '(tool-bar-mode nil))
 
 (load "~/.emacs-config/autoloads.el")
