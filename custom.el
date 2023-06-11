@@ -50,7 +50,7 @@ apps are not started from a shell."
 (setq-default line-spacing 0.23)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
-(add-hook 'window-setup-hook 'toggle-frame-fullscreen)
+; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
