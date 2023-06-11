@@ -38,6 +38,7 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(markdown-command "pandoc -f markdown -t html5")
  '(package-selected-packages
    '(flycheck lsp-ui rust-mode cnfonts company dash editorconfig geiser-chez magit markdown-preview-mode rainbow-delimiters s slime slime-company smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
