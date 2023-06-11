@@ -39,8 +39,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(cnfonts company dash editorconfig geiser-chez magit markdown-preview-mode rainbow-delimiters
-     s slime slime-company smart-mode-line smart-mode-line-powerline-theme))
+   '(flycheck lsp-ui rust-mode cnfonts company dash editorconfig geiser-chez magit markdown-preview-mode rainbow-delimiters s slime slime-company smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 

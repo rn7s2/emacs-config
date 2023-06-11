@@ -74,3 +74,9 @@ apps are not started from a shell."
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
+
+;; lsp
+(setq lsp-keymap-prefix "C-M-l")
+
+(require 'lsp-mode)
+(add-hook 'rust-mode-hook #'lsp-deferred)

@@ -3,6 +3,7 @@
 Simple emacs config.
 
 ## Supported
+- Rust
 - Common Lisp
 - C/C++
 - Scheme
