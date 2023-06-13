@@ -13,12 +13,13 @@ apps are not started from a shell."
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-; (defun set-proxy ()
-;   (let ((url "http://127.0.0.1:8889"))
-;     (setenv "http_proxy" url)
-;     (setenv "https_proxy" url)))
+(defun set-proxy ()
+  (let ((url "http://127.0.0.1:10809"))
+    (setenv "http_proxy" url)
+    (setenv "https_proxy" url)))
 
-; (set-proxy)
+(when (eq 'windows-nt system-type)
+  (set-proxy))
 
 (when (eq 'darwin system-type)
   (set-exec-path-from-shell-PATH))
@@ -74,6 +75,10 @@ apps are not started from a shell."
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
+
+;; racket
+(require 'racket-xp)
+(add-hook 'racket-mode-hook #'racket-xp-mode)
 
 ;; lsp
 (setq lsp-keymap-prefix "C-M-l")

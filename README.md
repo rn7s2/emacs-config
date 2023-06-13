@@ -3,12 +3,12 @@
 Simple emacs config.
 
 ## Supported
-- Rust
-- Common Lisp
-- C/C++
-- Scheme
+- Rust (rust-analyzer)
+- Common Lisp (slime)
+- C/C++ (clangd)
+- Racket (racket-mode)
 - Emacs Lisp
-- Markdown
+- Markdown (pandoc)
 
 ## Usage
 ### *nix
