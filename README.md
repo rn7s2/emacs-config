@@ -3,10 +3,8 @@
 Simple emacs config.
 
 ## Supported
-- Rust (rust-analyzer)
-- Common Lisp (slime)
+- Scheme (geiser-chez)
 - C/C++ (clangd)
-- Racket (racket-mode)
 - Emacs Lisp
 - Markdown (pandoc)
 

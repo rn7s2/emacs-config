@@ -48,7 +48,7 @@ apps are not started from a shell."
 (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
 ;; misc
-(setq-default line-spacing 0.23)
+; (setq-default line-spacing 0.23)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 ; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
@@ -73,15 +73,3 @@ apps are not started from a shell."
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
-(setq inferior-lisp-program "sbcl")
-(slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
-
-;; racket
-(require 'racket-xp)
-(add-hook 'racket-mode-hook #'racket-xp-mode)
-
-;; lsp
-(setq lsp-keymap-prefix "C-M-l")
-
-(require 'lsp-mode)
-(add-hook 'rust-mode-hook #'lsp-deferred)
