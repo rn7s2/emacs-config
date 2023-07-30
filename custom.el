@@ -24,11 +24,6 @@ apps are not started from a shell."
 (when (eq 'darwin system-type)
   (set-exec-path-from-shell-PATH))
 
-(add-to-list 'load-path "~/.emacs-config/copilot")
-(require 'copilot)
-
-(add-hook 'prog-mode-hook 'copilot-mode)
-
 ;; helper functions
 (defun add-hook-function-to-mode-hooks (mode-hooks hook-function)
   (dolist (mode-hook mode-hooks)
@@ -40,12 +35,6 @@ apps are not started from a shell."
 ;; company
 (global-company-mode)
 (add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
-
-(with-eval-after-load 'company
-  ;; disable inline previews
-  (delq 'company-preview-if-just-one-frontend company-frontends))
-
-(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
 ;; misc
 ; (setq-default line-spacing 0.23)
@@ -73,3 +62,5 @@ apps are not started from a shell."
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
+(setq inferior-lisp-program "ecl")
+(slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))

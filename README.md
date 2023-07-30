@@ -3,10 +3,10 @@
 Simple emacs config.
 
 ## Supported
-- Scheme (geiser-chez)
+- Common Lisp
 - C/C++ (clangd)
 - Emacs Lisp
-- Markdown (pandoc)
+- Markdown
 
 ## Usage
 ### *nix
