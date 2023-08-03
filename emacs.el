@@ -5,7 +5,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  `(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :width normal
-                :height ,@(if (eq 'darwin system-type) (list 180) (list 125))))))
+                :height ,@(cond ((eq 'darwin system-type) (list 180))
+                                ((eq 'gnu/linux system-type) (list 180))
+                                (t (list 125)))))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
