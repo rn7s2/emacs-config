@@ -7,7 +7,7 @@
  `(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :width normal
                 :height ,@(cond ((eq 'darwin system-type) (list 180))
                                 ((eq 'gnu/linux system-type) (list 180))
-                                (t (list 125)))))))
+                                (t (list 145)))))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
