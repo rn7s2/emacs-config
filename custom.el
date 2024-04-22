@@ -49,7 +49,7 @@ apps are not started from a shell."
                                        'hs-minor-mode))
 
 ;; font
-(setq cnfonts-personal-fontnames '(("IBM Plex Mono")))
+(setq cnfonts-personal-fontnames '(("SF Mono" "IBM Plex Mono")))
 (cnfonts-mode 1)
 
 ;; powerline
@@ -62,5 +62,5 @@ apps are not started from a shell."
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
-(setq inferior-lisp-program "sbcl")
+(setq inferior-lisp-program "abcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
