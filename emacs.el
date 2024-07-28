@@ -4,10 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- `(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight normal :width normal
-                :height ,@(cond ((eq 'darwin system-type) (list 180))
-                                ((eq 'gnu/linux system-type) (list 180))
-                                (t (list 145)))))))
+ '(default ((t (:family "Cascadia Code SemiLight" :foundry "outline" :slant normal :weight light :width normal :height 132))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -28,20 +25,18 @@
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
  '(backup-directory-alist '(("." . "~/.emacs-backups")))
  '(c-basic-offset 4)
+ '(c-default-style "bsd")
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(wombat))
+ '(custom-enabled-themes '(adwaita))
  '(custom-safe-themes
-   '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" default))
- '(display-battery-mode t)
- '(display-time-24hr-format t)
- '(display-time-mode t)
+   '("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default))
  '(fill-column 100)
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(cnfonts company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
+   '(company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 
