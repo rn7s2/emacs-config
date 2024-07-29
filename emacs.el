@@ -36,7 +36,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
+   '(ligature company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 
