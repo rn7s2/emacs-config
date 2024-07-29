@@ -28,7 +28,7 @@
  '(c-default-style "bsd")
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(adwaita))
+ '(custom-enabled-themes '(leuven-dark))
  '(custom-safe-themes
    '("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default))
  '(fill-column 100)
