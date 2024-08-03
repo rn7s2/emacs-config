@@ -37,10 +37,10 @@ apps are not started from a shell."
 (add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
 
 ;; misc
-; (setq-default line-spacing 0.23)
+;; (setq-default line-spacing 0.23)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
-; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
+;; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
@@ -59,6 +59,7 @@ apps are not started from a shell."
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
 (setq inferior-lisp-program "wx86cl64")
+;; (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
 
 ;; This assumes you've installed the package via MELPA.
