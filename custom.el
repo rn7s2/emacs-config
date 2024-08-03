@@ -7,7 +7,14 @@
   (global-unset-key key)
   (global-set-key key (interactive-action action)))
 
-(global-bind-key (kbd "C-a") 'back-to-indentation)
+(defvar *should-back-to-indentation* t)
+(defun go-begin-of-line ()
+  (cond (*should-back-to-indentation* (setf *should-back-to-indentation* nil)
+                                      (back-to-indentation))
+        (t (setf *should-back-to-indentation* t)
+           (move-beginning-of-line 1))))
+
+(global-bind-key (kbd "C-a") #'go-begin-of-line)
 
 (defun set-exec-path-from-shell-PATH ()
   "Set up Emacs' `exec-path' and PATH environment variable to match
