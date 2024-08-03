@@ -1,5 +1,14 @@
 ;; -*- lexical-binding: t; -*-
 
+(defmacro interactive-action (action)
+  `(lambda () (interactive) (funcall ,action)))
+
+(defun global-bind-key (key action)
+  (global-unset-key key)
+  (global-set-key key (interactive-action action)))
+
+(global-bind-key (kbd "C-a") 'back-to-indentation)
+
 (defun set-exec-path-from-shell-PATH ()
   "Set up Emacs' `exec-path' and PATH environment variable to match
 that used by the user's shell.
