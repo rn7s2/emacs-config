@@ -4,7 +4,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Cascadia Code" :foundry "outline" :slant normal :weight regular :width normal :height 139))))
+ `(default ((t (:family "Cascadia Code PL"
+                :foundry ,(if (eq 'windows-nt system-type) "outline" "nil")
+                :slant normal :weight regular :width normal
+                :height ,(if (eq 'windows-nt system-type) 139 200)))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -28,7 +31,7 @@
  '(c-default-style "bsd")
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(adwaita))
+ '(custom-enabled-themes '(wombat))
  '(custom-safe-themes
    '("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default))
  '(fill-column 100)
@@ -36,7 +39,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(ligature company rainbow-delimiters slime slime-company smart-mode-line smart-mode-line-powerline-theme))
+   '(company geiser-chez ligature rainbow-delimiters slime slime-company smart-mode-line))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 

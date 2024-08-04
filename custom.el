@@ -74,7 +74,10 @@ apps are not started from a shell."
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
-(setq inferior-lisp-program "wx86cl64")
+;; (setq inferior-lisp-program "abcl")
+;; (setq inferior-lisp-program "dx86cl64")
+;; (setq inferior-lisp-program "wx86cl64")
+;; (setq inferior-lisp-program "ecl")
 ;; (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
 
