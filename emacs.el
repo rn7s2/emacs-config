@@ -39,7 +39,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(company geiser-chez ligature rainbow-delimiters slime slime-company smart-mode-line))
+   '(company geiser-chez rainbow-delimiters smart-mode-line))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 

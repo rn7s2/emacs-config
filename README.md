@@ -3,13 +3,15 @@
 Simple emacs config.
 
 ## Supported
-- Common Lisp
+
+- Chez Scheme
 - C/C++ (clangd)
 - Emacs Lisp
-- Markdown
 
 ## Usage
-### *nix
+
+### \*nix
+
 In your shell:
 
 - `cd ~`
@@ -23,7 +25,8 @@ Then open emacs,
 - `M-x package-install-selected`
 
 ### Windows
+
 `.emacs` should be in `C:\Users\<YOUR USER NAME>\AppData\Roaming\`
-You can still create a symbollink to emacs.el.
+You can still create a symbollink to emacs.el using `mklink`.
 
 All done. Don't forget to restart emacs.
