@@ -4,10 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- `(default ((t (:family "Cascadia Code PL"
-                :foundry ,(if (eq 'windows-nt system-type) "outline" "nil")
-                :slant normal :weight regular :width normal
-                :height ,(if (eq 'windows-nt system-type) 139 200)))))
+ '(default ((t (:family "JetBrains Mono" :foundry "outline" :slant normal :weight regular :width normal :height 132))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -31,15 +28,15 @@
  '(c-default-style "bsd")
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(wombat))
+ '(custom-enabled-themes '(adwaita))
  '(custom-safe-themes
-   '("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default))
+   '("9b21c848d09ba7df8af217438797336ac99cbbbc87a08dc879e9291673a6a631" default))
  '(fill-column 100)
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(company geiser-chez rainbow-delimiters smart-mode-line))
+   '(company rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme slime slime-company))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 

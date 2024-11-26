@@ -4,7 +4,7 @@ Simple emacs config.
 
 ## Supported
 
-- Chez Scheme
+- Common Lisp
 - C/C++ (clangd)
 - Emacs Lisp
 
