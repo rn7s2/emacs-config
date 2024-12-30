@@ -5,7 +5,7 @@ Simple emacs config.
 ## Supported
 
 - Common Lisp
-- C/C++ (clangd)
+- C17/C++20 (clangd)
 - Emacs Lisp
 
 ## Usage

@@ -68,6 +68,12 @@ apps are not started from a shell."
 (setq sml/theme 'respectful)
 (sml/setup)
 
+;; c/c++
+(add-hook 'c-mode-hook
+          (lambda () (setq company-clang-arguments '("-std=c17"))))
+(add-hook 'c++-mode-hook
+          (lambda () (setq company-clang-arguments '("-std=c++20"))))
+          
 ;; lisp
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
                                    lisp-interaction-mode-hook
