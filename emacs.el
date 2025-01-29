@@ -31,7 +31,7 @@
  '(c-default-style "bsd")
  '(column-number-mode t)
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(adwaita))
+ '(custom-enabled-themes '(tsdh-light))
  '(custom-safe-themes
    '("9b21c848d09ba7df8af217438797336ac99cbbbc87a08dc879e9291673a6a631" default))
  '(fill-column 100)
