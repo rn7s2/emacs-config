@@ -1,4 +1,11 @@
 ;; -*- lexical-binding: t; -*-
-(setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
-                         ("nongnu" . "http://mirrors.ustc.edu.cn/elpa/nongnu/")))
+
+;; Official upstream
+(setq package-archives '(("gnu"    . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ("melpa"  . "https://melpa.org/packages/")))
+
+;; China mirror (USTC)
+; (setq package-archives '(("gnu"    . "https://mirrors.ustc.edu.cn/elpa/gnu/")
+;                          ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")
+;                          ("melpa"  . "https://mirrors.ustc.edu.cn/elpa/melpa/")))

@@ -4,10 +4,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- `(default ((t (:family "JetBrains Mono"
+ `(default ((t (:family "IBM Plex Mono"
                 :foundry ,(if (eq 'windows-nt system-type) "outline" "nil")
                 :slant normal :weight regular :width normal
-                :height ,(if (eq 'windows-nt system-type) 132 180)))))
+                :height ,(if (eq 'windows-nt system-type) 132 170)))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -34,7 +34,7 @@
  '(custom-enabled-themes '(tsdh-light))
  '(custom-safe-themes
    '("9b21c848d09ba7df8af217438797336ac99cbbbc87a08dc879e9291673a6a631" default))
- '(fill-column 100)
+ '(fill-column 80)
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)

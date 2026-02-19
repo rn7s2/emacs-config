@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+;;;; ---- Utility macros and functions ----
+
 (defmacro interactive-action (action)
   `(lambda () (interactive) (funcall ,action)))
 
@@ -7,14 +9,15 @@
   (global-unset-key key)
   (global-set-key key (interactive-action action)))
 
-(defvar *should-back-to-indentation* t)
-(defun go-begin-of-line ()
-  (cond (*should-back-to-indentation* (setf *should-back-to-indentation* nil)
-                                      (back-to-indentation))
-        (t (setf *should-back-to-indentation* t)
-           (move-beginning-of-line 1))))
+(defun add-hook-function-to-mode-hooks (mode-hooks hook-function)
+  (dolist (mode-hook mode-hooks)
+    (add-hook mode-hook hook-function)))
 
-(global-bind-key (kbd "C-a") #'go-begin-of-line)
+(defun add-hook-functions-to-mode-hook (mode-hook hook-functions)
+  (dolist (hook-function hook-functions)
+    (add-hook mode-hook hook-function)))
+
+;;;; ---- Environment ----
 
 (defun set-exec-path-from-shell-PATH ()
   "Set up Emacs' `exec-path' and PATH environment variable to match
@@ -25,7 +28,7 @@ apps are not started from a shell."
   (interactive)
   (let ((path-from-shell (replace-regexp-in-string
 			  "[ \t\n]*$" "" (shell-command-to-string
-					  "zsh --login -c 'echo $PATH'"))))
+					  "zsh --login -i -c 'echo $PATH'"))))
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
@@ -40,23 +43,40 @@ apps are not started from a shell."
 (when (eq 'darwin system-type)
   (set-exec-path-from-shell-PATH))
 
-;; helper functions
-(defun add-hook-function-to-mode-hooks (mode-hooks hook-function)
-  (dolist (mode-hook mode-hooks)
-    (add-hook mode-hook hook-function)))
-(defun add-hook-functions-to-mode-hook (mode-hook hook-functions)
-  (dolist (hook-function hook-functions)
-    (add-hook mode-hook hook-function)))
+;;;; ---- Window splitting ----
 
-;; company
-(global-company-mode)
-(add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
+(defun my/split-window-right ()
+  "Split window, keeping left pane at 90 columns."
+  (interactive)
+  (split-window-right 90))
 
-;; misc
-;; (setq-default line-spacing 0.23)
+(global-set-key (kbd "C-x 3") #'my/split-window-right)
+
+;;;; ---- Keybindings ----
+
+(defvar *should-back-to-indentation* t)
+(defun go-begin-of-line ()
+  (cond (*should-back-to-indentation* (setf *should-back-to-indentation* nil)
+                                      (back-to-indentation))
+        (t (setf *should-back-to-indentation* t)
+           (move-beginning-of-line 1))))
+
+(global-bind-key (kbd "C-a") #'go-begin-of-line)
+
+;;;; ---- UI and display ----
+
+(setq-default line-spacing 0.18)
+(setq x-underline-at-descent-line t)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 ;; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
+
+;; powerline
+(setq sml/theme 'respectful)
+(sml/setup)
+
+;;;; ---- Editing defaults ----
+
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
@@ -64,17 +84,20 @@ apps are not started from a shell."
                                  (list 'hl-line-mode
                                        'hs-minor-mode))
 
-;; powerline
-(setq sml/theme 'respectful)
-(sml/setup)
+;;;; ---- Completion (company) ----
 
-;; c/c++
+(global-company-mode)
+(add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
+
+;;;; ---- C/C++ ----
+
 (add-hook 'c-mode-hook
           (lambda () (setq company-clang-arguments '("-std=c17"))))
 (add-hook 'c++-mode-hook
           (lambda () (setq company-clang-arguments '("-std=c++20"))))
-          
-;; lisp
+
+;;;; ---- Lisp ----
+
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
                                    lisp-interaction-mode-hook
                                    scheme-mode-hook
@@ -83,3 +106,25 @@ apps are not started from a shell."
 (load (expand-file-name "~/.quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
+
+;;;; ---- FriCAS ----
+
+(defun efricas ()
+  "Start FriCAS using the official fricas elisp integration."
+  (interactive)
+  (let* ((fricas-bin (file-truename (or (executable-find "fricas")
+                                        (error "fricas not found in PATH"))))
+         (prefix (file-name-directory
+                  (directory-file-name (file-name-directory fricas-bin))))
+         (lib-dir (expand-file-name "lib/fricas" prefix))
+         (fricascmd (car (file-expand-wildcards
+                          (expand-file-name "target/*/bin/fricas" lib-dir)))))
+    (unless fricascmd
+      (error "Cannot find FriCAS internal binary under %s" lib-dir))
+    (server-start)
+    (setenv "FRICASCMD" fricascmd)
+    (setenv "FRICASEDITOR" "emacsclient +$line $name >/dev/null 2>&1")
+    (add-to-list 'load-path (expand-file-name "emacs" lib-dir))
+    (add-to-list 'auto-mode-alist '("\\.fri$" . fricas-mode))
+    (require 'fricas)
+    (fricas)))
