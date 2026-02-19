@@ -65,7 +65,7 @@ apps are not started from a shell."
 
 ;;;; ---- UI and display ----
 
-(setq-default line-spacing 0.18)
+(setq-default line-spacing 0.23)
 (setq x-underline-at-descent-line t)
 (setopt display-line-numbers-width-start t)
 (global-display-fill-column-indicator-mode)

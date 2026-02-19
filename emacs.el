@@ -4,7 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- `(default ((t (:family "IBM Plex Mono"
+ `(default ((t (:family "Google Sans Code"
                 :foundry ,(if (eq 'windows-nt system-type) "outline" "nil")
                 :slant normal :weight regular :width normal
                 :height ,(if (eq 'windows-nt system-type) 132 170)))))
@@ -39,7 +39,8 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(company rainbow-delimiters smart-mode-line smart-mode-line-powerline-theme slime slime-company))
+   '(company magit rainbow-delimiters slime slime-company smart-mode-line
+             smart-mode-line-powerline-theme))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 
