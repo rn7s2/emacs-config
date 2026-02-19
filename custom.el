@@ -132,6 +132,7 @@ apps are not started from a shell."
     (server-start)
     (setenv "FRICASCMD" fricascmd)
     (setenv "FRICASEDITOR" "emacsclient +$line $name >/dev/null 2>&1")
+    (setenv "DISPLAY" ":0")
     (add-to-list 'load-path (expand-file-name "emacs" lib-dir))
     (add-to-list 'auto-mode-alist '("\\.fri$" . fricas-mode))
     (require 'fricas)
