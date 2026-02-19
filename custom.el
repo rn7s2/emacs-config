@@ -67,9 +67,17 @@ apps are not started from a shell."
 
 (setq-default line-spacing 0.18)
 (setq x-underline-at-descent-line t)
+(setopt display-line-numbers-width-start t)
 (global-display-fill-column-indicator-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 ;; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
+
+;; Smooth scrolling
+(setq scroll-margin 5
+      scroll-conservatively 100
+      scroll-preserve-screen-position t
+      maximum-scroll-margin 0.5)
+(pixel-scroll-precision-mode 1)
 
 ;; powerline
 (setq sml/theme 'respectful)

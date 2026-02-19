@@ -1,6 +1,6 @@
 # emacs-config
 
-Minimal Emacs config with language support and sensible defaults.
+Minimal Emacs configuration with language support and sensible defaults.
 
 ## Features
 
@@ -9,7 +9,7 @@ Minimal Emacs config with language support and sensible defaults.
 - **Common Lisp** — SLIME with SBCL, Quicklisp, slime-company completion
 - **C17 / C++20** — company-clang with `-std=c17` / `-std=c++20`
 - **Emacs Lisp / Scheme** — rainbow-delimiters (6 depth colors)
-- **FriCAS** — `M-x efricas` for the interactive session
+- **FriCAS** — `M-x efricas` launches the interactive session
 
 ### UI
 
@@ -17,6 +17,7 @@ Minimal Emacs config with language support and sensible defaults.
 - Theme: tsdh-light
 - smart-mode-line with respectful powerline theme
 - Line numbers, fill-column indicator at 80, hl-line (underline) in prog-mode
+- Smooth scrolling with pixel-scroll-precision-mode
 - Starts maximized, no toolbar, no startup screen
 
 ### Editing
@@ -34,11 +35,9 @@ Minimal Emacs config with language support and sensible defaults.
 
 ### Packages
 
-`company` `rainbow-delimiters` `smart-mode-line` `smart-mode-line-powerline-theme` `slime` `slime-company`
+`company` · `rainbow-delimiters` · `smart-mode-line` · `smart-mode-line-powerline-theme` · `slime` · `slime-company`
 
-### Package archives
-
-GNU ELPA, NonGNU ELPA, MELPA — USTC mirror available in `mirror.el`.
+All installed from GNU ELPA, NonGNU ELPA, or MELPA. A USTC mirror is available in `mirror.el`.
 
 ## File structure
 
@@ -47,7 +46,7 @@ GNU ELPA, NonGNU ELPA, MELPA — USTC mirror available in `mirror.el`.
 | `emacs.el` | Entry point — faces, custom variables, loads `autoloads.el` |
 | `autoloads.el` | Boot sequence — loads `mirror.el` then `custom.el` |
 | `mirror.el` | Package archive URLs (upstream / USTC mirror) |
-| `custom.el` | Main config — environment, keybindings, UI, editing, languages |
+| `custom.el` | Main configuration — environment, keybindings, UI, editing, languages |
 
 ## Setup
 
@@ -66,4 +65,4 @@ PATH is inherited from your zsh login shell automatically on macOS.
 
 Symlink `.emacs` into `%APPDATA%` with `mklink`. A local HTTP proxy (`127.0.0.1:10809`) is configured automatically.
 
-Restart Emacs after setup.
+Restart Emacs after installation.
