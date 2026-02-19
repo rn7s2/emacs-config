@@ -6,14 +6,14 @@ Minimal Emacs configuration with language support and sensible defaults.
 
 ### Languages
 
-- **Common Lisp** — SLIME with SBCL, Quicklisp, slime-company completion
+- **Common Lisp** — SLIME with SBCL, Quicklisp integration, slime-company completion (`slime-fancy`, `slime-quicklisp`, `slime-asdf`)
 - **C17 / C++20** — company-clang with `-std=c17` / `-std=c++20`
-- **Emacs Lisp / Scheme** — rainbow-delimiters (6 depth colors)
+- **Lisp dialects** — rainbow-delimiters (6 depth colors) in Common Lisp, Emacs Lisp, Scheme, and `*scratch*`
 - **FriCAS** — `M-x efricas` launches the interactive session
 
 ### UI
 
-- Font: IBM Plex Mono (height 170 on macOS, 132 on Windows)
+- Font: Google Sans Code (height 170 on macOS, 132 on Windows)
 - Theme: tsdh-light
 - smart-mode-line with respectful powerline theme
 - Line numbers, fill-column indicator at 80, hl-line (underline) in prog-mode
@@ -29,13 +29,14 @@ Minimal Emacs configuration with language support and sensible defaults.
 - `C-x 3` splits with the left pane fixed at 90 columns
 - Backups saved to `~/.emacs-backups`
 
-### Completion
+### Completion & tools
 
 - Global company-mode (disabled in eshell)
+- magit for Git
 
 ### Packages
 
-`company` · `rainbow-delimiters` · `smart-mode-line` · `smart-mode-line-powerline-theme` · `slime` · `slime-company`
+`company` · `magit` · `rainbow-delimiters` · `slime` · `slime-company` · `smart-mode-line` · `smart-mode-line-powerline-theme`
 
 All installed from GNU ELPA, NonGNU ELPA, or MELPA. A USTC mirror is available in `mirror.el`.
 
@@ -43,7 +44,7 @@ All installed from GNU ELPA, NonGNU ELPA, or MELPA. A USTC mirror is available i
 
 | File | Purpose |
 | --- | --- |
-| `emacs.el` | Entry point — faces, custom variables, loads `autoloads.el` |
+| `emacs.el` | Entry point — faces, custom variables; loads `autoloads.el` |
 | `autoloads.el` | Boot sequence — loads `mirror.el` then `custom.el` |
 | `mirror.el` | Package archive URLs (upstream / USTC mirror) |
 | `custom.el` | Main configuration — environment, keybindings, UI, editing, languages |
