@@ -94,6 +94,10 @@ apps are not started from a shell."
 (when (eq 'darwin system-type)
   (set-system-dark-mode))
 
+;; XQuartz on macOS
+(when (eq 'darwin system-type)
+  (setenv "DISPLAY" ":0"))
+
 ;;;; ---- Editing defaults ----
 
 (add-hook-functions-to-mode-hook 'before-save-hook
@@ -123,7 +127,7 @@ apps are not started from a shell."
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
 (load (expand-file-name "~/.quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "sbcl")
+(setq inferior-lisp-program "sbcl --dynamic-space-size 16384")
 (slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
 
 ;;;; ---- FriCAS ----
@@ -143,7 +147,6 @@ apps are not started from a shell."
     (server-start)
     (setenv "FRICASCMD" fricascmd)
     (setenv "FRICASEDITOR" "emacsclient +$line $name >/dev/null 2>&1")
-    (setenv "DISPLAY" ":0")
     (add-to-list 'load-path (expand-file-name "emacs" lib-dir))
     (add-to-list 'auto-mode-alist '("\\.fri$" . fricas-mode))
     (require 'fricas)
