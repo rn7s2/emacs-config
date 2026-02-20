@@ -128,7 +128,7 @@ apps are not started from a shell."
                                  'rainbow-delimiters-mode)
 (load (expand-file-name "~/.quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "sbcl --dynamic-space-size 16384")
-(slime-setup '(slime-fancy slime-company slime-quicklisp slime-asdf))
+(slime-setup '(slime-fancy slime-quicklisp slime-asdf))
 
 ;;;; ---- FriCAS ----
 
