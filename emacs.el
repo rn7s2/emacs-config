@@ -4,10 +4,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- `(default ((t (:family "Google Sans Code"
-                :foundry ,(if (eq 'windows-nt system-type) "outline" "nil")
-                :slant normal :weight regular :width normal
-                :height ,(if (eq 'windows-nt system-type) 132 170)))))
  '(hl-line ((t (:underline t))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "#8b0000"))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
@@ -38,9 +34,10 @@
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(package-selected-packages
-   '(company magit rainbow-delimiters slime smart-mode-line
-             smart-mode-line-powerline-theme))
+ '(package-selected-packages nil)
+ '(package-vc-selected-packages
+   '((claude-code :url "https://github.com/stevemolitor/claude-code.el")
+     (monet :url "https://github.com/stevemolitor/monet")))
  '(rainbow-delimiters-max-face-count 6)
  '(tool-bar-mode nil))
 

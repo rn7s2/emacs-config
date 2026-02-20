@@ -1,5 +1,15 @@
 ;; -*- lexical-binding: t; -*-
 
+;;;; ---- Default font ----
+
+(set-face-attribute 'default nil
+                    :family "Google Sans Code"
+                    :foundry (if (eq 'windows-nt system-type) "outline" "nil")
+                    :slant 'normal
+                    :weight 'regular
+                    :width 'normal
+                    :height (if (eq 'windows-nt system-type) 132 160))
+
 ;;;; ---- Utility macros and functions ----
 
 (defmacro interactive-action (action)
@@ -73,8 +83,7 @@ apps are not started from a shell."
 ;; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 
 ;; Smooth scrolling
-(setq scroll-margin 3
-      scroll-conservatively 100
+(setq scroll-conservatively 100
       scroll-preserve-screen-position t
       maximum-scroll-margin 0.5)
 (pixel-scroll-precision-mode 1)
@@ -134,7 +143,7 @@ apps are not started from a shell."
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
-(load (expand-file-name "~/.quicklisp/slime-helper.el"))
+
 (setq inferior-lisp-program "sbcl --dynamic-space-size 16384")
 (slime-setup '(slime-fancy slime-quicklisp slime-asdf))
 
@@ -159,3 +168,7 @@ apps are not started from a shell."
     (add-to-list 'auto-mode-alist '("\\.fri$" . fricas-mode))
     (require 'fricas)
     (fricas)))
+
+;;;; ---- Claude Code ----
+(setq claude-code-terminal-backend 'vterm)
+(setopt vterm-min-window-width 40)
