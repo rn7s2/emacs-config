@@ -9,15 +9,15 @@ Minimal Emacs configuration with language support and sensible defaults.
 - **Common Lisp** — SLIME with SBCL, Quicklisp integration, slime-company completion (`slime-fancy`, `slime-quicklisp`, `slime-asdf`)
 - **C17 / C++20** — company-clang with `-std=c17` / `-std=c++20`
 - **Lisp dialects** — rainbow-delimiters (6 depth colors) in Common Lisp, Emacs Lisp, Scheme, and `*scratch*`
-- **FriCAS** — `M-x efricas` launches the interactive session
+- **FriCAS** — `M-x efricas` auto-discovers the FriCAS installation and launches an interactive session via the official elisp integration
 
 ### UI
 
-- Font: Google Sans Code (height 170 on macOS, 132 on Windows)
-- Theme: tsdh-light
+- Font: Google Sans Code (height 170 on macOS, 132 on Windows), line spacing 0.23
+- Theme: tsdh-light by default; auto-switches to wombat on macOS when system dark mode is active
 - smart-mode-line with respectful powerline theme
 - Line numbers, fill-column indicator at 80, hl-line (underline) in prog-mode
-- Smooth scrolling with pixel-scroll-precision-mode
+- Smooth scrolling via pixel-scroll-precision-mode with scroll margin
 - Starts maximized, no toolbar, no startup screen
 
 ### Editing

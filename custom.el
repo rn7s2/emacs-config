@@ -83,6 +83,17 @@ apps are not started from a shell."
 (setq sml/theme 'respectful)
 (sml/setup)
 
+;; Light/Dark Theme
+(defun set-system-dark-mode ()
+  (interactive)
+  (when (string= (shell-command-to-string "printf %s \"$( osascript -e \'tell application \"System Events\" to tell appearance preferences to return dark mode\' )\"") "true")
+    (load-theme 'wombat t)
+    (require 'hl-line)
+    (set-face-attribute 'hl-line nil :background "#3a3a3a")))
+
+(when (eq 'darwin system-type)
+  (set-system-dark-mode))
+
 ;;;; ---- Editing defaults ----
 
 (add-hook-functions-to-mode-hook 'before-save-hook
