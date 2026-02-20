@@ -73,7 +73,7 @@ apps are not started from a shell."
 ;; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 
 ;; Smooth scrolling
-(setq scroll-margin 5
+(setq scroll-margin 3
       scroll-conservatively 100
       scroll-preserve-screen-position t
       maximum-scroll-margin 0.5)
