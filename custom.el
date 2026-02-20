@@ -107,6 +107,14 @@ apps are not started from a shell."
                                  (list 'hl-line-mode
                                        'hs-minor-mode))
 
+;; Special UP for 1st line
+(defun my/previous-line-or-bol ()
+  (interactive)
+  (if (= (line-number-at-pos) 1)
+      (beginning-of-line)
+    (previous-line)))
+(global-set-key [remap previous-line] #'my/previous-line-or-bol)
+
 ;;;; ---- Completion (company) ----
 
 (global-company-mode)
