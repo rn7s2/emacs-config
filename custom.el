@@ -104,7 +104,14 @@ apps are not started from a shell."
   (when (string= (shell-command-to-string "printf %s \"$( osascript -e \'tell application \"System Events\" to tell appearance preferences to return dark mode\' )\"") "true")
     (load-theme 'wombat t)
     (require 'hl-line)
-    (set-face-attribute 'hl-line nil :background "#3a3a3a")))
+    (set-face-attribute 'hl-line nil :background "#3a3a3a")
+    ;; Bright rainbow-delimiters for dark background
+    (set-face-attribute 'rainbow-delimiters-depth-1-face nil :foreground "#c678dd")
+    (set-face-attribute 'rainbow-delimiters-depth-2-face nil :foreground "#61afef")
+    (set-face-attribute 'rainbow-delimiters-depth-3-face nil :foreground "#56b6c2")
+    (set-face-attribute 'rainbow-delimiters-depth-4-face nil :foreground "#98c379")
+    (set-face-attribute 'rainbow-delimiters-depth-5-face nil :foreground "#e5c07b")
+    (set-face-attribute 'rainbow-delimiters-depth-6-face nil :foreground "#e06c75")))
 
 (when (eq 'darwin system-type)
   (set-system-dark-mode))
