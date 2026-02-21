@@ -149,6 +149,12 @@ apps are not started from a shell."
 (add-hook 'c++-mode-hook
           (lambda () (setq company-clang-arguments '("-std=c++20"))))
 
+;;;; ---- Python ----
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+
 ;;;; ---- Lisp ----
 
 (add-hook-function-to-mode-hooks '(lisp-mode-hook

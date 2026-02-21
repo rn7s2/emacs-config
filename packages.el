@@ -3,6 +3,7 @@
 ;;;; ---- Standard packages (MELPA / ELPA) ----
 
 (use-package company :ensure t)
+(use-package company-jedi :ensure t)
 (use-package geiser-chez :ensure t)
 (use-package magit :ensure t)
 (use-package rainbow-delimiters :ensure t)
