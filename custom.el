@@ -60,7 +60,13 @@ apps are not started from a shell."
   (interactive)
   (split-window-right 90))
 
+(defun my/split-window-below ()
+  "Split window, keeping top pane at 28 rows."
+  (interactive)
+  (split-window-below 29))
+
 (global-set-key (kbd "C-x 3") #'my/split-window-right)
+(global-set-key (kbd "C-x 2") #'my/split-window-below)
 
 ;;;; ---- Keybindings ----
 
