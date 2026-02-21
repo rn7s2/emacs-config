@@ -85,6 +85,8 @@ apps are not started from a shell."
 (setq x-underline-at-descent-line t)
 (setopt display-line-numbers-width-start t)
 (global-display-fill-column-indicator-mode)
+
+(setq initial-frame-alist '((top . 0) (left . 0)))
 (add-hook 'window-setup-hook 'toggle-frame-maximized)
 ;; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 

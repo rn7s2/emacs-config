@@ -17,8 +17,7 @@
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown")
-  :bind (:map markdown-mode-map
-         ("C-c C-e" . markdown-do)))
+  :bind (:map markdown-mode-map ("C-c C-e" . markdown-do)))
 
 ;;;; ---- VC packages (GitHub) ----
 
@@ -40,3 +39,24 @@
   :bind-keymap ("C-c c" . claude-code-command-map)
   :bind
   (:repeat-map my-claude-code-map ("M" . claude-code-cycle-mode)))
+
+;;;; ---- EAF ----
+
+(use-package eaf
+  :load-path "~/.emacs.d/site-lisp/emacs-application-framework"
+  :custom
+  ;; See https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization
+  (eaf-browser-continue-where-left-off t)
+  (eaf-browser-enable-adblocker t)
+  (browse-url-browser-function 'eaf-open-browser)
+  :config
+  (defalias 'browse-web #'eaf-open-browser))
+
+(require 'eaf-music-player)
+(require 'eaf-image-viewer)
+(require 'eaf-pdf-viewer)
+(require 'eaf-browser)
+(require 'eaf-map)
+(require 'eaf-mind-elixir)
+(require 'eaf-markdown-previewer)
+(require 'eaf-video-player)
