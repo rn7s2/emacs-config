@@ -1,15 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-;;;; ---- Default font ----
-
-(set-face-attribute 'default nil
-                    :family "Google Sans Code"
-                    :foundry (if (eq 'windows-nt system-type) "outline" "nil")
-                    :slant 'normal
-                    :weight 'regular
-                    :width 'normal
-                    :height (if (eq 'windows-nt system-type) 132 160))
-
 ;;;; ---- Utility macros and functions ----
 
 (defmacro interactive-action (action)
@@ -27,47 +17,6 @@
   (dolist (hook-function hook-functions)
     (add-hook mode-hook hook-function)))
 
-;;;; ---- Environment ----
-
-(defun set-exec-path-from-shell-PATH ()
-  "Set up Emacs' `exec-path' and PATH environment variable to match
-that used by the user's shell.
-
-This is particularly useful under Mac OS X and macOS, where GUI
-apps are not started from a shell."
-  (interactive)
-  (let ((path-from-shell (replace-regexp-in-string
-			  "[ \t\n]*$" "" (shell-command-to-string
-					  "zsh --login -i -c 'echo $PATH'"))))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
-
-(defun set-proxy ()
-  (let ((url "http://127.0.0.1:10809"))
-    (setenv "http_proxy" url)
-    (setenv "https_proxy" url)))
-
-(when (eq 'windows-nt system-type)
-  (set-proxy))
-
-(when (eq 'darwin system-type)
-  (set-exec-path-from-shell-PATH))
-
-;;;; ---- Window splitting ----
-
-(defun my/split-window-right ()
-  "Split window, keeping left pane at 90 columns."
-  (interactive)
-  (split-window-right 90))
-
-(defun my/split-window-below ()
-  "Split window, keeping top pane at 28 rows."
-  (interactive)
-  (split-window-below 29))
-
-(global-set-key (kbd "C-x 3") #'my/split-window-right)
-(global-set-key (kbd "C-x 2") #'my/split-window-below)
-
 ;;;; ---- Keybindings ----
 
 (defvar *should-back-to-indentation* t)
@@ -81,13 +30,13 @@ apps are not started from a shell."
 
 ;;;; ---- UI and display ----
 
-(setq-default line-spacing 0.23)
+;; (setq-default line-spacing 0.23)
 (setq x-underline-at-descent-line t)
 (setopt display-line-numbers-width-start t)
 (global-display-fill-column-indicator-mode)
 
-(setq initial-frame-alist '((top . 0) (left . 0)))
-(add-hook 'window-setup-hook 'toggle-frame-maximized)
+;; (setq initial-frame-alist '((top . 0) (left . 0)))
+;; (add-hook 'window-setup-hook 'toggle-frame-maximized)
 ;; (add-hook 'window-setup-hook 'toggle-frame-fullscreen)
 
 ;; Smooth scrolling
@@ -103,24 +52,18 @@ apps are not started from a shell."
 ;; Light/Dark Theme
 (defun set-system-dark-mode ()
   (interactive)
-  (when (string= (shell-command-to-string "printf %s \"$( osascript -e \'tell application \"System Events\" to tell appearance preferences to return dark mode\' )\"") "true")
-    (load-theme 'wombat t)
-    (require 'hl-line)
-    (set-face-attribute 'hl-line nil :background "#3a3a3a")
-    ;; Bright rainbow-delimiters for dark background
-    (set-face-attribute 'rainbow-delimiters-depth-1-face nil :foreground "#c678dd")
-    (set-face-attribute 'rainbow-delimiters-depth-2-face nil :foreground "#61afef")
-    (set-face-attribute 'rainbow-delimiters-depth-3-face nil :foreground "#56b6c2")
-    (set-face-attribute 'rainbow-delimiters-depth-4-face nil :foreground "#98c379")
-    (set-face-attribute 'rainbow-delimiters-depth-5-face nil :foreground "#e5c07b")
-    (set-face-attribute 'rainbow-delimiters-depth-6-face nil :foreground "#e06c75")))
+  (load-theme 'modus-vivendi-tinted t)
+  (require 'hl-line)
+  (set-face-attribute 'hl-line nil :background "#3a3a3a")
+  ;; Bright rainbow-delimiters for dark background
+  (set-face-attribute 'rainbow-delimiters-depth-1-face nil :foreground "#c678dd")
+  (set-face-attribute 'rainbow-delimiters-depth-2-face nil :foreground "#61afef")
+  (set-face-attribute 'rainbow-delimiters-depth-3-face nil :foreground "#56b6c2")
+  (set-face-attribute 'rainbow-delimiters-depth-4-face nil :foreground "#98c379")
+  (set-face-attribute 'rainbow-delimiters-depth-5-face nil :foreground "#e5c07b")
+  (set-face-attribute 'rainbow-delimiters-depth-6-face nil :foreground "#e06c75"))
 
-(when (eq 'darwin system-type)
-  (set-system-dark-mode))
-
-;; XQuartz on macOS
-(when (eq 'darwin system-type)
-  (setenv "DISPLAY" ":0"))
+(set-system-dark-mode)
 
 ;;;; ---- Editing defaults ----
 
@@ -151,12 +94,6 @@ apps are not started from a shell."
 (add-hook 'c++-mode-hook
           (lambda () (setq company-clang-arguments '("-std=c++20"))))
 
-;;;; ---- Python ----
-(defun my/python-mode-hook ()
-  (add-to-list 'company-backends 'company-jedi))
-
-(add-hook 'python-mode-hook 'my/python-mode-hook)
-
 ;;;; ---- Lisp ----
 
 (add-hook-function-to-mode-hooks '(lisp-mode-hook
@@ -164,32 +101,3 @@ apps are not started from a shell."
                                    scheme-mode-hook
                                    emacs-lisp-mode-hook)
                                  'rainbow-delimiters-mode)
-
-(setq inferior-lisp-program "sbcl --dynamic-space-size 16384")
-(slime-setup '(slime-fancy slime-quicklisp slime-asdf))
-
-;;;; ---- FriCAS ----
-
-(defun efricas ()
-  "Start FriCAS using the official fricas elisp integration."
-  (interactive)
-  (let* ((fricas-bin (file-truename (or (executable-find "fricas")
-                                        (error "fricas not found in PATH"))))
-         (prefix (file-name-directory
-                  (directory-file-name (file-name-directory fricas-bin))))
-         (lib-dir (expand-file-name "lib/fricas" prefix))
-         (fricascmd (car (file-expand-wildcards
-                          (expand-file-name "target/*/bin/fricas" lib-dir)))))
-    (unless fricascmd
-      (error "Cannot find FriCAS internal binary under %s" lib-dir))
-    (server-start)
-    (setenv "FRICASCMD" fricascmd)
-    (setenv "FRICASEDITOR" "emacsclient +$line $name >/dev/null 2>&1")
-    (add-to-list 'load-path (expand-file-name "emacs" lib-dir))
-    (add-to-list 'auto-mode-alist '("\\.fri$" . fricas-mode))
-    (require 'fricas)
-    (fricas)))
-
-;;;; ---- Claude Code ----
-(setq claude-code-terminal-backend 'vterm)
-(setopt vterm-min-window-width 40)

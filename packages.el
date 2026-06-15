@@ -3,60 +3,13 @@
 ;;;; ---- Standard packages (MELPA / ELPA) ----
 
 (use-package company :ensure t)
-(use-package company-jedi :ensure t)
-(use-package geiser-chez :ensure t)
 (use-package magit :ensure t)
 (use-package rainbow-delimiters :ensure t)
-(use-package slime :ensure t)
 (use-package smart-mode-line :ensure t)
 (use-package smart-mode-line-powerline-theme :ensure t)
-(use-package eat :ensure t)
-(use-package vterm :ensure t)
 
 (use-package markdown-mode
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown")
   :bind (:map markdown-mode-map ("C-c C-e" . markdown-do)))
-
-;;;; ---- VC packages (GitHub) ----
-
-(use-package inheritenv
-  :ensure t
-  :vc (:url "https://github.com/purcell/inheritenv" :rev :newest))
-
-(use-package monet
-  :ensure t
-  :vc (:url "https://github.com/stevemolitor/monet" :rev :newest))
-
-(use-package claude-code
-  :ensure t
-  :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
-  :config
-  (add-hook 'claude-code-process-environment-functions #'monet-start-server-function)
-  (monet-mode 1)
-  (claude-code-mode)
-  :bind-keymap ("C-c c" . claude-code-command-map)
-  :bind
-  (:repeat-map my-claude-code-map ("M" . claude-code-cycle-mode)))
-
-;;;; ---- EAF ----
-
-(use-package eaf
-  :load-path "~/.emacs.d/site-lisp/emacs-application-framework"
-  :custom
-  ;; See https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization
-  (eaf-browser-continue-where-left-off t)
-  (eaf-browser-enable-adblocker t)
-  (browse-url-browser-function 'eaf-open-browser)
-  :config
-  (defalias 'browse-web #'eaf-open-browser))
-
-(require 'eaf-music-player)
-(require 'eaf-image-viewer)
-(require 'eaf-pdf-viewer)
-(require 'eaf-browser)
-(require 'eaf-map)
-(require 'eaf-mind-elixir)
-(require 'eaf-markdown-previewer)
-(require 'eaf-video-player)

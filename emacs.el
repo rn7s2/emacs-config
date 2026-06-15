@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t; -*-
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -13,6 +14,7 @@
  '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "#2e7d32"))))
  '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "#bf6000"))))
  '(rainbow-delimiters-depth-6-face ((t (:inherit rainbow-delimiters-base-face :foreground "#b71c1c")))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -30,15 +32,11 @@
  '(custom-enabled-themes '(tsdh-light))
  '(custom-safe-themes
    '("9b21c848d09ba7df8af217438797336ac99cbbbc87a08dc879e9291673a6a631" default))
- '(fill-column 80)
+ '(fill-column 100)
  '(global-display-line-numbers-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages nil)
- '(package-vc-selected-packages
-   '((claude-code :url "https://github.com/stevemolitor/claude-code.el")
-     (monet :url "https://github.com/stevemolitor/monet")))
- '(rainbow-delimiters-max-face-count 6)
- '(tool-bar-mode nil))
+ '(rainbow-delimiters-max-face-count 6))
 
 (load "~/.emacs-config/autoloads.el")
