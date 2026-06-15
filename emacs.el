@@ -28,7 +28,6 @@
  '(c-basic-offset 4)
  '(c-default-style "bsd")
  '(column-number-mode t)
- '(cua-mode t)
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes '(tsdh-light))
  '(custom-safe-themes
