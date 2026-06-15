@@ -7,9 +7,9 @@
 (use-package rainbow-delimiters :ensure t)
 (use-package smart-mode-line :ensure t)
 (use-package smart-mode-line-powerline-theme :ensure t)
-
 (use-package markdown-mode
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown")
   :bind (:map markdown-mode-map ("C-c C-e" . markdown-do)))
+(use-package rust-mode :ensure t)

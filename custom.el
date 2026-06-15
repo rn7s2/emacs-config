@@ -89,6 +89,10 @@
 (global-company-mode)
 (add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
 
+;;;; ---- Rust ----
+
+(add-hook 'rust-mode-hook 'eglot-ensure)
+
 ;;;; ---- C/C++ ----
 
 (add-hook 'c-mode-hook
