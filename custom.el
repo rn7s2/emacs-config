@@ -67,6 +67,8 @@
 
 ;;;; ---- Editing defaults ----
 
+(global-auto-revert-mode 1)
+
 (add-hook-functions-to-mode-hook 'before-save-hook
                                  '(delete-trailing-lines
                                    delete-trailing-whitespace))
