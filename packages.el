@@ -13,3 +13,4 @@
   :init (setq markdown-command "multimarkdown")
   :bind (:map markdown-mode-map ("C-c C-e" . markdown-do)))
 (use-package rust-mode :ensure t)
+(use-package go-mode :ensure t)

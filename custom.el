@@ -93,6 +93,10 @@
 
 (add-hook 'rust-mode-hook 'eglot-ensure)
 
+;;;; ---- Go ----
+
+(add-hook 'go-mode-hook 'eglot-ensure)
+
 ;;;; ---- C/C++ ----
 
 (add-hook 'c-mode-hook
