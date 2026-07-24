@@ -28,7 +28,14 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode 1)
 (global-display-fill-column-indicator-mode 1)
-(setopt display-line-numbers-width-start t
+;; By default Emacs sizes the line-number column from the largest number
+;; currently visible, so buffer text jumps sideways the moment line 100 (or
+;; 1000) scrolls into view.  Reserve four columns up front instead -- that
+;; covers every buffer up to 9999 lines -- and let the width only ever grow,
+;; so buffers that outgrow it (or that fill in after the mode was enabled,
+;; like compilation and eshell) widen once and then stay put.
+(setopt display-line-numbers-width 4
+        display-line-numbers-grow-only t
         fill-column 100)
 
 ;; Draw underlines just below the text so hl-line stays readable.
