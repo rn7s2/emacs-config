@@ -1,61 +1,90 @@
 # emacs-config
 
-Minimal Emacs configuration with language support and sensible defaults.
+A minimal, modular Emacs configuration with language support and sensible
+defaults. Targets **Emacs 29+** (developed on Emacs 30).
+
+## Layout
+
+```text
+init.el              Entry point — GC tuning, load-path, custom-file, module loading
+custom.el            Customize-managed settings (written by M-x customize; leave it alone)
+lisp/
+  init-package.el    Package archives (USTC mirror) + use-package
+  init-env.el        Inherit the shell PATH in GUI Emacs (macOS)
+  init-ui.el         Dark theme, frame geometry, modeline, scrolling, rainbow-delimiters
+  init-editing.el    Editing defaults, keybindings, company completion
+  init-lang.el       C/C++, Rust, Go, Markdown, Magit
+  init-lisp.el       Common Lisp (SLIME + slime-company)
+```
+
+Each `lisp/init-*.el` module installs the packages it needs via `use-package`
+(`use-package-always-ensure` is on), so everything is installed on first launch.
 
 ## Features
 
 ### Languages
 
+- **Common Lisp** — SLIME + SBCL with company-mode completion via
+  `slime-company` (`fuzzy` completion). Run `M-x slime` to start a REPL.
 - **C17 / C++20** — company-clang with `-std=c17` / `-std=c++20`
-- **Lisp dialects** — rainbow-delimiters (6 depth colors) in Common Lisp, Emacs Lisp, Scheme, and `*scratch*`
-- **Markdown** — markdown-mode with GFM mode for README files
+- **Rust** / **Go** — Eglot (built-in LSP client) on file open
+- **Markdown** — markdown-mode, GFM mode for `README` files
+- **Emacs Lisp / Scheme** — rainbow-delimiters (6 depth colors)
 
 ### UI
 
-- dark mode by default, `modus-vivendi-tinted` theme
-- smart-mode-line with respectful powerline theme
-- line numbers, fill-column indicator at 100, hl-line (underline) in prog-mode
-- smooth scrolling via pixel-scroll-precision-mode with scroll margin
-- starts maximized, no toolbar, no startup screen
+- Dark by default (`modus-vivendi-tinted`), smart-mode-line (`respectful`)
+- GUI frames open maximized in the top-left corner
+- Line numbers, fill-column indicator at 100, highlighted current line
+- Smooth scrolling via `pixel-scroll-precision-mode`
+- No toolbar / scrollbar / startup screen
+
+### macOS GUI
+
+`Emacs.app` is launched by launchd, not from a shell, so it only inherits
+`/usr/bin:/bin:/usr/sbin:/sbin` — Homebrew, Cargo and Go binaries are invisible
+and `M-x slime` / Eglot fail to find `sbcl`, `rust-analyzer` and `gopls`.
+[lisp/init-env.el](lisp/init-env.el) fixes this with `exec-path-from-shell`.
+
+It runs the shell with `-l -i`: a login shell alone finds Homebrew and Cargo,
+but `$GOPATH/bin` is exported from `~/.zshrc`, which only interactive shells
+read. Move that export to `~/.zshenv` if you'd rather drop `-i`.
 
 ### Editing
 
-- BSD C style, 4-space indentation, spaces only
-- trailing whitespace and blank lines stripped on save
-- code folding via `hs-minor-mode` in prog-mode
-- `C-a` toggles between indentation and beginning of line
-- backups saved to `~/.emacs-backups`
+- BSD C style, 4-space indent, spaces only
+- Trailing whitespace stripped on save; files auto-reverted on external change
+- Code folding (`hs-minor-mode`) in `prog-mode`
+- `C-a` toggles between indentation and beginning of line; up-arrow on line 1
+  goes to beginning of line
+- Backups saved to `~/.emacs-backups`
 
-### Completion & tools
+### Tools
 
-- global company-mode (disabled in eshell)
-- magit for Git
-
-### Packages
-
-ELPA / MELPA (via use-package):
-
-`company` · `magit` · `markdown-mode` · `rainbow-delimiters` · `smart-mode-line` · `smart-mode-line-powerline-theme`
-
-A USTC mirror is available in `mirror.el`.
-
-## File structure
-
-| File           | Purpose                                                               |
-|----------------|-----------------------------------------------------------------------|
-| `emacs.el`     | Entry point — faces, custom variables; loads `autoloads.el`           |
-| `autoloads.el` | Boot sequence — loads `mirror.el`, `packages.el`, then `custom.el`    |
-| `mirror.el`    | Package archive URLs (upstream / USTC mirror)                         |
-| `packages.el`  | Package declarations via use-package                                  |
-| `custom.el`    | Main configuration — environment, keybindings, UI, editing, languages |
+- Global company-mode (off in eshell); `C-n`/`C-p`/`C-d`/`M-.` in the popup
+- Magit on `C-x g`
 
 ## Setup
 
-### macOS / Linux
+### Requirements
+
+- Emacs 29+
+- For Common Lisp: `sbcl` and (optionally) Quicklisp
+
+  ```sh
+  brew install sbcl        # macOS
+  ```
+
+  SLIME is installed from MELPA automatically — you do **not** need to install
+  it through Quicklisp. If you use Quicklisp, make sure `~/.sbclrc` loads it
+  (the standard installer does this).
+
+### Install
 
 ```sh
 git clone https://github.com/rn7s2/emacs-config.git ~/.emacs-config
-ln -s ~/.emacs-config/emacs.el ~/.emacs
+ln -sf ~/.emacs-config/init.el ~/.emacs
 ```
 
-Packages install automatically on first launch via use-package.
+Launch Emacs; packages install on first run. Outside mainland China, swap the
+USTC mirror for the upstream archives in [lisp/init-package.el](lisp/init-package.el).
