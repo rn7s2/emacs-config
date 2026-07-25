@@ -6,15 +6,16 @@ defaults. Targets **Emacs 29+** (developed on Emacs 30).
 ## Layout
 
 ```text
-init.el              Entry point — GC tuning, load-path, custom-file, module loading
-custom.el            Customize-managed settings (written by M-x customize; leave it alone)
+init.el                Entry point — GC tuning, load-path, custom-file, module loading
+custom.el              Customize-managed settings (written by M-x customize; leave it alone)
 lisp/
-  init-package.el    Package archives (USTC mirror) + use-package
-  init-env.el        Inherit the shell PATH in GUI Emacs (macOS)
-  init-ui.el         Dark theme, frame geometry, modeline, scrolling, rainbow-delimiters
-  init-editing.el    Editing defaults, keybindings, company completion
-  init-lang.el       C/C++, Rust, Go, Markdown, Magit
-  init-lisp.el       Common Lisp (SLIME + slime-company)
+  init-package.el      Package archives (USTC mirror) + use-package
+  init-env.el          Inherit the shell PATH in GUI Emacs (macOS)
+  init-ui.el           Dark theme, frame geometry, modeline, scrolling, rainbow-delimiters
+  init-editing.el      Editing defaults, keybindings, company completion
+  init-lang.el         C/C++, Rust, Go, Markdown, Magit
+  init-lisp.el         Common Lisp (SLIME + slime-company)
+  init-claude-code.el  Claude Code CLI integration (claude-code-ide + ghostel)
 ```
 
 Each `lisp/init-*.el` module installs the packages it needs via `use-package`
@@ -63,6 +64,9 @@ read. Move that export to `~/.zshenv` if you'd rather drop `-i`.
 
 - Global company-mode (off in eshell); `C-n`/`C-p`/`C-d`/`M-.` in the popup
 - Magit on `C-x g`
+- Claude Code on `C-c C-'` (`claude-code-ide-menu`), using the `ghostel`
+  terminal backend and serving Emacs' xref / tree-sitter / imenu / project /
+  diagnostics to the CLI over MCP
 
 ## Setup
 

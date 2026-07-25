@@ -55,5 +55,21 @@
               (add-to-list 'my/ensured-packages pkg))))
         (use-package-ensure-elpa name args state no-refresh)))
 
+;; Packages installed from Git need the same bookkeeping, and cannot ride along
+;; with the above: `use-package-handler/:ensure' blanks its own argument
+;; whenever the same form also carries `:vc', so a `:vc' package never reaches
+;; the ensure function.  `use-package-vc-install' is still called on every
+;; startup -- its "already installed?" test is inside the function, not at the
+;; call site -- so advising it sees every `:vc' declaration.
+(defvar my/vc-packages nil
+  "Packages requested by `use-package' via `:vc'.")
+
+(defun my/record-vc-package (arg &optional _local-path)
+  "Record the package named by ARG, a normalized (NAME OPTS REV) `:vc' spec."
+  (let ((pkg (car-safe arg)))
+    (when (and pkg (symbolp pkg))
+      (add-to-list 'my/vc-packages pkg))))
+(advice-add 'use-package-vc-install :before #'my/record-vc-package)
+
 (provide 'init-package)
 ;;; init-package.el ends here
