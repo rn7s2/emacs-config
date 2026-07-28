@@ -14,7 +14,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes '(default))
  '(package-vc-selected-packages
-   '((claude-code-ide :url "https://github.com/manzaltu/claude-code-ide.el"))))
+   '((evo-emacs :url "https://github.com/rn7s2/evo-emacs")
+     (claude-code-ide :url "https://github.com/manzaltu/claude-code-ide.el"))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -36,6 +36,7 @@
 (require 'init-lang)        ; C/C++, Rust, Go, Markdown, Magit
 (require 'init-lisp)        ; Common Lisp (SLIME + company)
 (require 'init-claude-code) ; Claude Code
+(require 'init-evo)         ; evo agent
 
 ;; Now that every module has declared its packages, tell `package-autoremove'
 ;; which ones this config actually wants; everything else is a dependency.
