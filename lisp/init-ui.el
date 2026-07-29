@@ -22,7 +22,7 @@
 ;; simply Emacs' defaults (`regular' is a synonym for `normal'), and a foundry
 ;; of "nil" only narrows font matching -- so family and height are all we need.
 (when (display-graphic-p)
-  (set-face-attribute 'default nil :family "Iosevka" :height 180))
+  (set-face-attribute 'default nil :family "Sarasa Mono SC" :height 160))
 
 ;; Line and column indicators.
 (column-number-mode 1)
