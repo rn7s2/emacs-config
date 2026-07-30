@@ -14,8 +14,27 @@
 ;; Frame geometry (GUI only): open maximized in the top-left corner.  Setting
 ;; the frame parameter directly avoids the visible resize that the old
 ;; `toggle-frame-maximized' on `window-setup-hook' produced.
+;;
+;; `initial-frame-alist' only governs the very first frame Emacs creates at
+;; startup; any later frame (e.g. Cmd+N / `make-frame-command' on macOS)
+;; consults `default-frame-alist' instead, so both need to be set or every
+;; frame after the first one opens at Emacs' default (unmaximized) size.
 (when (display-graphic-p)
-  (setq initial-frame-alist '((top . 0) (left . 0) (fullscreen . maximized))))
+  (let ((geometry '((top . 0) (left . 0) (fullscreen . maximized))))
+    (setq initial-frame-alist geometry
+          default-frame-alist geometry)))
+
+;; New frames otherwise open showing whatever buffer/window layout happened
+;; to be selected in the frame they were spawned from, which reads as the
+;; "same window" just mirrored into a new frame.  Give every frame *after*
+;; the first a clean slate -- its own `*scratch*' buffer -- instead.  The
+;; hook is installed here (after startup has already created the first
+;; frame), so the initial frame is left untouched.
+(defun my/scratch-on-new-frame (frame)
+  "Show `*scratch*' in the newly created FRAME instead of an inherited buffer."
+  (with-selected-frame frame
+    (switch-to-buffer (get-buffer-create "*scratch*"))))
+(add-hook 'after-make-frame-functions #'my/scratch-on-new-frame)
 
 ;; Default font (GUI only).  `:height' is in 1/10 pt, so 180 = 18pt.
 ;; Customize also records :slant/:weight/:width and a :foundry, but those are

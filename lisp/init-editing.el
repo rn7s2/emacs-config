@@ -39,6 +39,21 @@
 (when (eq system-type 'darwin)
   (global-unset-key (kbd "s-t")))
 
+;; `C-x C-c' normally runs `save-buffers-kill-terminal', which kills the
+;; whole Emacs instance (all frames, all buffers).  With multiple frames per
+;; instance (see init-ui.el) that is almost never what's wanted from a single
+;; frame -- rebind it to just close the current frame instead.  On the last
+;; remaining frame there is nothing left to "just close", so fall back to
+;; the original behaviour there: `save-buffers-kill-terminal' prompts to
+;; save any modified buffers before quitting.
+(defun my/delete-frame-or-kill-emacs ()
+  "Close the current frame, or quit Emacs if this is the only frame left."
+  (interactive)
+  (if (cdr (frame-list))
+      (delete-frame)
+    (save-buffers-kill-terminal)))
+(global-set-key (kbd "C-x C-c") #'my/delete-frame-or-kill-emacs)
+
 ;; On the first line, up-movement lands on beginning-of-line instead of erroring.
 (defun my/previous-line-or-bol ()
   "Move to the previous line, or to beginning of line when on line 1."
