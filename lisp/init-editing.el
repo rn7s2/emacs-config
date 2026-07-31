@@ -54,6 +54,9 @@
     (save-buffers-kill-terminal)))
 (global-set-key (kbd "C-x C-c") #'my/delete-frame-or-kill-emacs)
 
+;; Fold/unfold the block at point (see `hs-minor-mode' above).
+(global-set-key (kbd "C-<tab>") #'hs-toggle-hiding)
+
 ;; On the first line, up-movement lands on beginning-of-line instead of erroring.
 (defun my/previous-line-or-bol ()
   "Move to the previous line, or to beginning of line when on line 1."
