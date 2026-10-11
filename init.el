@@ -8,6 +8,11 @@
 
 ;;; Code:
 
+;; Avoid the bundled GCC deriving an invalid macOS target on newer Darwin releases.
+(when (eq system-type 'darwin)
+  (require 'comp)
+  (add-to-list 'native-comp-driver-options "-mmacosx-version-min=11.0"))
+
 ;; Speed up startup by suspending garbage collection, then restore a sane
 ;; threshold once Emacs has finished loading.
 (let ((normal-gc-cons-threshold (* 16 1024 1024)))
